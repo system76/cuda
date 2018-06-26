@@ -3,9 +3,6 @@
 %:
 	dh $@
 
-# CUDA requires to be in /usr/local
-override_dh_usrlocal:
-
 # CUDA ships its own shared libraries
 override_dh_shlibdeps:
 

@@ -1,3 +1,3 @@
 #!/bin/sh
 
-export PATH=$PATH:/usr/local/cuda/bin
+export PATH=$PATH:/usr/lib/cuda/bin

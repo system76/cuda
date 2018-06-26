@@ -5,7 +5,7 @@ REMOTE_CUDA_DIR = https://developer.nvidia.com/compute/cuda/$(CUDA_VERSION)/Prod
 INSTALLER_URL = $(REMOTE_CUDA_DIR)/local_installers/cuda_9.2.88_396.26_linux
 CUDA_DIR = cuda-$(CUDA_VERSION)
 
-PREFIX ?= /usr/local
+PREFIX ?= /usr/lib
 BEFORE := $(shell echo $(DESTDIR)$(PREFIX) | sed 's/\//\\\//g')
 AFTER := $(shell echo $(PREFIX) | sed 's/\//\\\//g')
 
@@ -30,7 +30,9 @@ install:
 		--samples --samplespath=$(DESTDIR)$(PREFIX)/$(CUDA_DIR)/samples
 
 	# Fix the paths due to the packaging destination differing from the actual system destination.
-	find $(DESTDIR)$(PREFIX)/$(CUDA_DIR) -type f -exec sed -i -e 's/$(BEFORE)/$(AFTER)/g' '{}' \;
+	find $(DESTDIR)$(PREFIX)/$(CUDA_DIR) -type f \
+		-not -name '*.so' -not -name '*.a' \
+		-exec sed -i -e 's/$(BEFORE)/$(AFTER)/g; s/usr\/local/$(AFTER)/g' {} \;
 
 	# Set environment variables required by the CUDA toolkit
 	install -Dm0644 assets/system76-cuda.sh   $(DESTDIR)/etc/profile.d/system76-cuda.sh
