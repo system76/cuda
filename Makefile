@@ -26,8 +26,7 @@ clean:
 install:
 	./$(SCRIPT) --silent \
 		--no-opengl-libs --no-drm \
-		--toolkit --toolkitpath=$(DESTDIR)$(PREFIX)/$(CUDA_DIR) \
-		--samples --samplespath=$(DESTDIR)$(PREFIX)/$(CUDA_DIR)/samples
+		--toolkit --toolkitpath=$(DESTDIR)$(PREFIX)/$(CUDA_DIR)
 
 	# Fix the paths due to the packaging destination differing from the actual system destination.
 	find $(DESTDIR)$(PREFIX)/$(CUDA_DIR) -type f \
@@ -37,3 +36,5 @@ install:
 	# Set environment variables required by the CUDA toolkit
 	install -Dm0644 assets/system76-cuda.sh   $(DESTDIR)/etc/profile.d/system76-cuda.sh
 	install -Dm0644 assets/system76-cuda.conf $(DESTDIR)/etc/ld.so.conf.d/system76-cuda.conf
+	# Due to an inability to include NVIDIA's samples, we will instead include a script to fetch them.
+	install -Dm0755 assets/fetch-cuda-samples $(DESTDIR)$(PREFIX)/$(CUDA_DIR)/bin/fetch-cuda-samples

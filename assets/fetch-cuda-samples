@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -ex
+if ! hash git 2>/dev/null; then
+    echo git must be installed to fetch sources
+    exit 1
+fi
+
+# NVIDIA provides samples for CUDA 9.2 on GitHub
+git clone https://github.com/NVIDIA/cuda-samples.git

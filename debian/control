@@ -14,9 +14,3 @@ Depends:
     libx11-dev,
     libxmu-dev,
     ${misc:Depends},
-
-Package: system76-cuda-samples-9-2
-Description: NVIDIA CUDA Samples
-Architecture: amd64
-Depends:
-    system76-cuda-9-2

@@ -3,6 +3,5 @@
 /debian/*.log
 /debian/tmp
 /debian/.debhelper
-
 /installer
 /samples
