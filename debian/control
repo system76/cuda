@@ -1,0 +1,22 @@
+Source: system76-cuda-9-2
+Maintainer: Michael Murphy <michael@system76.com>
+Standards-Version: 4.1.1
+Priority: optional
+Section: devel
+
+Package: system76-cuda-9-2
+Description: NVIDIA CUDA Compiler / Libraries / Toolkit
+Architecture: amd64
+Depends:
+    g++,
+    freeglut3-dev,
+    build-essential,
+    libx11-dev,
+    libxmu-dev,
+    ${misc:Depends},
+
+Package: system76-cuda-samples-9-2
+Description: NVIDIA CUDA Samples
+Architecture: amd64
+Depends:
+    system76-cuda-9-2
