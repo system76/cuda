@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -x
+
+CHECKSUM=0c67bf836eb11033e3c1aeea8d37e889
+CUDA_VERSION=9.2
+TMP_FILE=/tmp/cuda-samples-${CUDA_VERSION}.tar.gz
+
+# Fetch 9.2 samples from NVIDIA's GitHub repository.
+wget https://github.com/NVIDIA/cuda-samples/archive/v${CUDA_VERSION}.tar.gz \
+    -O ${TMP_FILE}
+
+# Verify that the downloaded file is valid.
+if test ${CHECKSUM} = $(md5sum ${TMP_FILE} | cut -d' ' -f1); then
+    tar -xzvf ${TMP_FILE}
+    rm ${TMP_FILE}
+else
+    rm ${TMP_FILE}
+    echo "The downloaded CUDA ${CUDA_VERSION} samples did not have a valid checksum."
+    exit 1
+fi

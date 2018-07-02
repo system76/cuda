@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+export CUDA_VERSION=9.0
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	make \
+		PATCHES="/1/cuda_9.0.176.1_linux-run=8477e5733c8250dd3e110ee127002b9c \
+			/2/cuda_9.0.176.2_linux-run=4d3113ffd68a4c67511ca66e497badba \
+			/3/cuda_9.0.176.3_linux-run=0d7d07dc3084e0f0ce7d861b5a642f19" \
+		INSTALLER=cuda_9.0.176_384.81_linux-run \
+		INSTALLER_SUM=7a00187b2ce5c5e350e68882f42dd507
+
+# CUDA ships its own shared libraries
+override_dh_shlibdeps:
+
+override_dh_strip:
+	dh_strip -Xsamples

@@ -1,0 +1,17 @@
+Source: system76-cuda-9-1
+Maintainer: Michael Aaron Murphy <michael@system76.com>
+Standards-Version: 4.1.1
+Priority: optional
+Section: devel
+
+Package: system76-cuda-9-1
+Description: NVIDIA CUDA 9.1 Compiler / Libraries / Toolkit
+Architecture: amd64
+Section: devel
+Depends:
+    g++,
+    freeglut3-dev,
+    build-essential,
+    libx11-dev,
+    libxmu-dev,
+    ${misc:Depends},

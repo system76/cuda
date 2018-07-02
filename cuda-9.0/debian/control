@@ -1,12 +1,13 @@
-Source: system76-cuda-9-2
-Maintainer: Michael Murphy <michael@system76.com>
+Source: system76-cuda-9-0
+Maintainer: Michael Aaron Murphy <michael@system76.com>
 Standards-Version: 4.1.1
 Priority: optional
 Section: devel
 
-Package: system76-cuda-9-2
-Description: NVIDIA CUDA Compiler / Libraries / Toolkit
+Package: system76-cuda-9-0
+Description: NVIDIA CUDA 9.0 Compiler / Libraries / Toolkit
 Architecture: amd64
+Section: devel
 Depends:
     g++,
     freeglut3-dev,
