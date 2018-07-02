@@ -9,9 +9,5 @@ Description: NVIDIA CUDA 9.1 Compiler / Libraries / Toolkit
 Architecture: amd64
 Section: devel
 Depends:
-    g++,
-    freeglut3-dev,
-    build-essential,
-    libx11-dev,
-    libxmu-dev,
+    system76-cuda,
     ${misc:Depends},

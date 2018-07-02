@@ -6,6 +6,7 @@
 /*/installer-*
 /*/patch*.run
 /*/debian/system76-cuda-?-?/
+/cuda/debian/system76-cuda/
 /*.buildinfo
 /*.changes
 /*.deb
