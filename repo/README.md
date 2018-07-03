@@ -1,7 +1,8 @@
 # Debian Packaging Repo Config
 
 Place the assets required by the CUDA toolkit into the `assets` directory,
-within this directory.
+within this directory. They can be obtained automatically using the provided
+`acquire_assets.sh` script.
 
 ```
 assets

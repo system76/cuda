@@ -20,7 +20,7 @@ url = "https://github.com/system76/cuda"
     dst = "cuda-9.1"
 
     [[source.artifacts]]
-    src = "assets/9.1/*"
+    src = "assets/9.2/*"
     dst = "cuda-9.2"
 
     # If a project contains sub-projects, list the members here.
