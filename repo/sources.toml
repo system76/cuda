@@ -1,0 +1,49 @@
+archive = "bionic"
+version = "18.04"
+origin = "system76-cuda"
+label = "System76 CUDA Repo"
+email = "michael@system76.com"
+
+[[source]]
+name = "system76-cuda"
+version = "0.1.0"
+cvs = "git"
+url = "https://github.com/system76/cuda"
+
+    # Artifacts are files which we have cached in advance.
+    [[source.artifacts]]
+    src = "assets/9.0/*"  # Where the assets can be found (globbed)
+    dst = "cuda-9.0"      # Where the assets should be stored.
+
+    [[source.artifacts]]
+    src = "assets/9.1/*"
+    dst = "cuda-9.1"
+
+    [[source.artifacts]]
+    src = "assets/9.1/*"
+    dst = "cuda-9.2"
+
+    # If a project contains sub-projects, list the members here.
+    [[source.members]]
+    name = "system76-cuda"  # The name of the project's source package
+    directory = "cuda"      # The directory of the sub-project
+    priority = 0            # The order which the package should be built
+    build_on = "changelog"  # The condition for building a package
+
+    [[source.members]]
+    name = "system76-cuda-9-0"
+    directory = "cuda-9.0"
+    priority = 1
+    build_on = "changelog"
+
+    [[source.members]]
+    name = "system76-cuda-9-1"
+    directory = "cuda-9.1"
+    priority = 1
+    build_on = "changelog"
+
+    [[source.members]]
+    name = "system76-cuda-9-2"
+    directory = "cuda-9.2"
+    priority = 1
+    build_on = "changelog"
