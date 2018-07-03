@@ -7,8 +7,7 @@ email = "michael@system76.com"
 [[source]]
 name = "system76-cuda"
 version = "0.1.0"
-cvs = "git"
-url = "https://github.com/system76/cuda"
+path = ".."
 
     # Artifacts are files which we have cached in advance.
     [[source.artifacts]]
