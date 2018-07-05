@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
 CUDA_VERSION=9.2
-DESTDIR=$(PWD)/debian/tmp/usr/lib/$(CUDA_VERSION)
+PREFIX=usr/lib/cuda-$(CUDA_VERSION)
 
 %:
 	dh $@
@@ -9,10 +9,7 @@ DESTDIR=$(PWD)/debian/tmp/usr/lib/$(CUDA_VERSION)
 override_dh_auto_build:
 
 override_dh_auto_install:
-	mkdir -p $(DESTDIR); \
-	tar xvf cudnn.tgz -C $(DESTDIR); \
-	mv $(DESTDIR)/cuda/* $(DESTDIR); \
-	rmdir $(DESTDIR)/cuda
+	tar xvf cudnn.tgz
 
 # CUDA ships its own shared libraries
 override_dh_shlibdeps:
