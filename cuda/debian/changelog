@@ -1,3 +1,10 @@
+system76-cuda (0pop2) bionic; urgency=medium
+
+  * Add lib directory path for CUPTI
+
+ -- Michael Murphy <michael@system76.com>  Mon, 5 Jul 2018 11:24:00 -0600
+
+
 system76-cuda (0pop1) bionic; urgency=medium
 
   * Initial release.

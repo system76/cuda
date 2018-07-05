@@ -7,7 +7,14 @@
 /*/patch*.run
 /*/debian/system76-cuda-?-?/
 /cuda/debian/system76-cuda/
-/*.buildinfo
+/*.build*
 /*.changes
 /*.deb
 /*.ddeb
+/*.dsc
+/*.tar.xz
+/repo/assets
+/repo/build
+/repo/dists
+/repo/pool
+/repo/sources
