@@ -6,27 +6,27 @@ email = "michael@system76.com"
 
 [[source]]
 name = "system76-cuda"
-path = ".."
+location = { path = ".." }
 
     # Artifacts are files which we have cached in advance.
     [[source.artifacts]]
-    src = "assets/9.0/*"  # Where the assets can be found (globbed)
+    src = "9.0/*"  # Where the assets can be found (globbed)
     dst = "cuda-9.0"      # Where the assets should be stored.
 
     [[source.artifacts]]
-    src = "assets/9.1/*"
+    src = "9.1/*"
     dst = "cuda-9.1"
 
     [[source.artifacts]]
-    src = "assets/9.2/*"
+    src = "9.2/*"
     dst = "cuda-9.2"
 
     [[source.artifacts]]
-    src = "assets/cudnn-9.0/*"
+    src = "cudnn-9.0/*"
     dst = "cudnn-9.0"
 
     [[source.artifacts]]
-    src = "assets/cudnn-9.2/*"
+    src = "cudnn-9.2/*"
     dst = "cudnn-9.2"
 
     # If a project contains sub-projects, list the members here.
@@ -75,5 +75,8 @@ checksum = "387e0a8f8b99d89d8e60486cb03bf7a7"
 
 # [[source]]
 # name = "tensorflow"
-# url = "https://github.com/tensorflow/tensorflow/archive/v1.7.1.tar.gz"
-# cvs = "tar"
+# debian = { path = "../tensorflow" }
+#
+#     [source.location]
+#     url = "https://github.com/tensorflow/tensorflow/archive/v1.7.1.tar.gz"
+#     checksum = "33ed4afb5b11b20090e2f6314c867f6c"
