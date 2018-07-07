@@ -1,0 +1,64 @@
+archive = "bionic"
+version = "18.04"
+origin = "system76-cuda"
+label = "System76 CUDA Repo"
+email = "michael@system76.com"
+
+[[source]]
+name = "system76-cuda"
+build_on = "changelog"
+
+[[source]]
+name = "system76-cuda-9.0"
+build_on = "changelog"
+assets = [
+    { src = "cuda_makefile", dst = "Makefile" }
+]
+
+[[source]]
+name = "system76-cuda-9.2"
+build_on = "changelog"
+assets = [
+    { src = "cuda_makefile", dst = "Makefile" }
+]
+
+[[source]]
+name = "system76-cudnn-9.0"
+build_on = "changelog"
+
+[[source]]
+name = "system76-cudnn-9.2"
+build_on = "changelog"
+
+# Requirement for bazel, due to a serious issue with the certs in bionic.
+[[direct]]
+name = "ca-certificates-java"
+version = "20180516ubuntu1"
+arch = "all"
+url = "https://launchpad.net/ubuntu/+archive/primary/+files/ca-certificates-java_20180516ubuntu1_all.deb"
+
+# Build system required by tensorflow
+[[source]]
+name = "bazel"
+build_on = "changelog"
+
+    [source.location]
+    url = "https://github.com/bazelbuild/bazel/releases/download/0.15.0/bazel-0.15.0-dist.zip"
+    checksum = "fb6b928b62f068697bd66ad6d13aad53"
+
+# [[source]]
+# name = "tensorflow-1.8-cuda-9.2"
+# build_on = "changelog"
+#
+#     [source.location]
+#     url = "https://github.com/tensorflow/tensorflow/archive/v1.8.0.tar.gz"
+#     checksum = "cd45874be9296644471dd43e7da3fbd0"
+
+# [[source]]
+# name = "tensorflow-1.7"
+# debian = { path = "../tensorflow-1.7" }
+#
+#     [source.location]
+#     url = "https://github.com/tensorflow/tensorflow/archive/v1.7.1.tar.gz"
+#     checksum = "33ed4afb5b11b20090e2f6314c867f6c"
+#

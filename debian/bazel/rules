@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+PREFIX=usr/bin/
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	bash compile.sh
+
+override_dh_auto_install:
+	install -Dm0744 output/bazel $(PREFIX)/bazel
