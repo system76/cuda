@@ -2,7 +2,23 @@
 
 set -ex
 
-EXTRACT_DIR=assets/preextract/system76-cuda-$CUDA_VERSION
+PACKAGES="assets/packages"
+
+function fetch {
+    echo LOCATION = $1
+    echo URL = $2
+    echo CHECKSUM = $3
+
+    mkdir $(dirname $1) -p
+    CHECKSUM=$(md5sum $1 | cut -d' ' -f1)
+    if [ ! $CHECKSUM ] || [ $CHECKSUM != $3 ]; then
+        wget $2 -O $1
+        if [ $(md5sum $1 | cut -d' ' -f1) != $3 ]; then
+            echo checksum does not match
+            exit 1;
+        fi
+    fi
+}
 
 function fetch_patches {
     REMOTE_PATCH_DIR=$1/patches
@@ -15,13 +31,8 @@ function fetch_patches {
         PATCH=$EXTRACT_DIR/patch-$CUDA_VERSION-$N.run
         N=$((N + 1))
 
-        if [ ! -f $PATCH ] || [ $(md5sum $PATCH | cut -d' ' -f1) != $CHECKSUM ]; then
-            wget $REMOTE_PATCH -O $PATCH;
-            if [ $(md5sum $PATCH | cut -d' ' -f1) != $CHECKSUM ]; then
-                echo patch checksum does not match
-                exit 1
-            fi
-        fi
+        fetch $PATCH $REMOTE_PATCh $CHECKSUM
+        chmod +x $PATCH
     done
 }
 
@@ -31,23 +42,28 @@ function get_toolkit {
     INSTALLER_SUM=$3
     PATCHES=$4
 
-    SCRIPT=assets/$CUDA_VERSION/installer-$CUDA_VERSION
+    EXTRACT_DIR=$PACKAGES/system76-cuda-$CUDA_VERSION
+    SCRIPT=$EXTRACT_DIR/installer-$CUDA_VERSION
     REMOTE_CUDA_DIR=https://developer.nvidia.com/compute/cuda/$CUDA_VERSION/Prod
     INSTALLER_URL=$REMOTE_CUDA_DIR/local_installers/$INSTALLER
     CUDA_DIR=cuda-$CUDA_VERSION
 
     mkdir $EXTRACT_DIR -p
     fetch_patches $REMOTE_CUDA_DIR $CUDA_VERSION $PATCHES
-
-    if [ ! -f $SCRIPT ] || [ $(md5sum $SCRIPT | cut -d' ' -f1) != $INSTALLER_SUM ]; then
-		wget $INSTALLER_URL -O $SCRIPT;
-		chmod +x $SCRIPT;
-		if [ $(md5sum $SCRIPT | cut -d' ' -f1) != $INSTALLER_SUM ]; then
-			echo installer checksum does not match;
-			exit 1;
-		fi
-	fi
+    fetch $SCRIPT $INSTALLER_URL $INSTALLER_SUM
+    chmod +x $SCRIPT
 }
+
+CUDNN_9_0="$PACKAGES/system76-cudnn-9.0/cudnn.tgz"
+CUDNN_9_0_URL="http://developer.download.nvidia.com/compute/redist/cudnn/v7.1.4/cudnn-9.0-linux-x64-v7.1.tgz"
+CUDNN_9_0_SUM="b29fd0cf7faf7b1b44acc4edeef6b802"
+
+CUDNN_9_2="$PACKAGES/system76-cudnn-9.2/cudnn.tgz"
+CUDNN_9_2_URL="http://developer.download.nvidia.com/compute/redist/cudnn/v7.1.4/cudnn-9.2-linux-x64-v7.1.tgz"
+CUDNN_9_2_SUM="814fe34f2963948d4ee236a34792f872"
+
+fetch $CUDNN_9_0 $CUDNN_9_0_URL $CUDNN_9_0_SUM
+fetch $CUDNN_9_2 $CUDNN_9_2_URL $CUDNN_9_2_SUM
 
 get_toolkit 9.0 \
     cuda_9.0.176_384.81_linux-run \
