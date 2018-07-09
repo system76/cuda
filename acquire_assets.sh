@@ -12,7 +12,7 @@ function fetch_patches {
     for patch in $3; do
         REMOTE_PATCH=$REMOTE_PATCH_DIR/$(echo $patch | cut -d'=' -f1)
         CHECKSUM=$(echo $patch | cut -d'=' -f2)
-        PATCH=$(EXTRACT_DIR)/patch-$CUDA_VERSION-$N.run
+        PATCH=$EXTRACT_DIR/patch-$CUDA_VERSION-$N.run
         N=$((N + 1))
 
         if [ ! -f $PATCH ] || [ $(md5sum $PATCH | cut -d' ' -f1) != $CHECKSUM ]; then
@@ -36,7 +36,7 @@ function get_toolkit {
     INSTALLER_URL=$REMOTE_CUDA_DIR/local_installers/$INSTALLER
     CUDA_DIR=cuda-$CUDA_VERSION
 
-    mkdir $(EXTRACT_DIR) -p
+    mkdir $EXTRACT_DIR -p
     fetch_patches $REMOTE_CUDA_DIR $CUDA_VERSION $PATCHES
 
     if [ ! -f $SCRIPT ] || [ $(md5sum $SCRIPT | cut -d' ' -f1) != $INSTALLER_SUM ]; then
