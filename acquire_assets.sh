@@ -31,7 +31,7 @@ function fetch_patches {
         PATCH=$EXTRACT_DIR/patch-$CUDA_VERSION-$N.run
         N=$((N + 1))
 
-        fetch $PATCH $REMOTE_PATCh $CHECKSUM
+        fetch $PATCH $REMOTE_PATCH $CHECKSUM
         chmod +x $PATCH
     done
 }
