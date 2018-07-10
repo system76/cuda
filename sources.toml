@@ -44,7 +44,7 @@ build_on = "changelog"
 
     [source.location]
     url = "https://github.com/bazelbuild/bazel/releases/download/0.15.0/bazel-0.15.0-dist.zip"
-    checksum = "fb6b928b62f068697bd66ad6d13aad53"
+    checksum = "c3b716e6625e6b8c323350c95cd3ae0f56aeb00458dddd10544d5bead8a7b602"
 
 # [[source]]
 # name = "tensorflow-1.8-cuda-9.2"
