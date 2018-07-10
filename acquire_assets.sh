@@ -10,10 +10,10 @@ function fetch {
     echo CHECKSUM = $3
 
     mkdir $(dirname $1) -p
-    CHECKSUM=$(md5sum $1 | cut -d' ' -f1)
+    CHECKSUM=$(sha256sum $1 | cut -d' ' -f1)
     if [ ! $CHECKSUM ] || [ $CHECKSUM != $3 ]; then
         wget $2 -O $1
-        if [ $(md5sum $1 | cut -d' ' -f1) != $3 ]; then
+        if [ $(sha256sum $1 | cut -d' ' -f1) != $3 ]; then
             echo checksum does not match
             exit 1;
         fi
@@ -56,30 +56,30 @@ function get_toolkit {
 
 CUDNN_9_0="$PACKAGES/system76-cudnn-9.0/cudnn.tgz"
 CUDNN_9_0_URL="http://developer.download.nvidia.com/compute/redist/cudnn/v7.1.4/cudnn-9.0-linux-x64-v7.1.tgz"
-CUDNN_9_0_SUM="b29fd0cf7faf7b1b44acc4edeef6b802"
+CUDNN_9_0_SUM="60b581d0f05324c33323024a264aa3fb185c533e2f67dae7fda847b926bb7e57"
 
 CUDNN_9_2="$PACKAGES/system76-cudnn-9.2/cudnn.tgz"
 CUDNN_9_2_URL="http://developer.download.nvidia.com/compute/redist/cudnn/v7.1.4/cudnn-9.2-linux-x64-v7.1.tgz"
-CUDNN_9_2_SUM="814fe34f2963948d4ee236a34792f872"
+CUDNN_9_2_SUM="f875340f812b942408098e4c9807cb4f8bdaea0db7c48613acece10c7c827101"
 
 fetch $CUDNN_9_0 $CUDNN_9_0_URL $CUDNN_9_0_SUM
 fetch $CUDNN_9_2 $CUDNN_9_2_URL $CUDNN_9_2_SUM
 
 get_toolkit 9.0 \
     cuda_9.0.176_384.81_linux-run \
-    7a00187b2ce5c5e350e68882f42dd507 \
-    "/1/cuda_9.0.176.1_linux-run=8477e5733c8250dd3e110ee127002b9c \
-        /2/cuda_9.0.176.2_linux-run=4d3113ffd68a4c67511ca66e497badba \
-        /3/cuda_9.0.176.3_linux-run=0d7d07dc3084e0f0ce7d861b5a642f19"
+    "96863423feaa50b5c1c5e1b9ec537ef7ba77576a3986652351ae43e66bcd080c" \
+    "/1/cuda_9.0.176.1_linux-run=a4bf63e08f01fcbdfa9ff147f54e45a84a3a70e571b28d2d62e9277c4f7a78ed \
+        /2/cuda_9.0.176.2_linux-run=ec345f6d17d52c0ab6ea296ec389efdabca2ca56bddde8723bcea7be646ce5eb \
+        /3/cuda_9.0.176.3_linux-run=429e2c30da8021ec10f047ce475bc628832a5f93110f5cf487f2327dfb1aa8ca"
 
-get_toolkit 9.1 \
-    cuda_9.1.85_387.26_linux \
-    67a5c3933109507df6b68f80650b4b4a \
-    "/1/cuda_9.1.85.1_linux=2babebcbdf656000ebba30ee2efa4ad3 \
-        /2/cuda_9.1.85.2_linux=b991d63601b32540c445f6df52e1648d \
-        /3/cuda_9.1.85.3_linux=dcdb6c0adb5457fcf43cb520995a3112"
+# get_toolkit 9.1 \
+#     cuda_9.1.85_387.26_linux \
+#     "8496c72b16fee61889f9281449b5d633d0b358b46579175c275d85c9205fe953" \
+#     "/1/cuda_9.1.85.1_linux=af9ce3d7ce4ea3b9b075135640077695f420d5dc585d76cbdae09d658b8ca3b8 \
+#         /2/cuda_9.1.85.2_linux=d59f07a35ba750fc8ab04e144e7556d03b57a4f1a0060f895615af0113e0e099 \
+#         /3/cuda_9.1.85.3_linux=421094368e4732677e5963d790fa161be2586ed90b291988477f8c8f9cd9ac8a"
 
 get_toolkit 9.2 \
     cuda_9.2.88_396.26_linux \
-    dd6e33e10d32a29914b7700c7b3d1ca0 \
-    "/1/cuda_9.2.88.1_linux=0e615d99152b9dfce5da20dfece6b7ea"
+    "8d02cc2a82f35b456d447df463148ac4cc823891be8820948109ad6186f2667c" \
+    "/1/cuda_9.2.88.1_linux=d2f2d0e91959e4b9a93cd2fa82dced3541e3b8046c3ab7ae335d36f71dbbca13"
