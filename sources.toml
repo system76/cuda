@@ -8,27 +8,31 @@ email = "info@system76.com"
 name = "system76-cuda"
 build_on = "changelog"
 
-[[source]]
-name = "system76-cuda-9.0"
-build_on = "changelog"
-assets = [
-    { src = "cuda_makefile", dst = "Makefile" }
-]
+# [[source]]
+# name = "system76-cuda-9.0"
+# build_on = "changelog"
+# keep_source = false
+# assets = [
+#     { src = "cuda_makefile", dst = "Makefile" }
+# ]
 
 [[source]]
 name = "system76-cuda-9.2"
 build_on = "changelog"
+keep_source = false
 assets = [
     { src = "cuda_makefile", dst = "Makefile" }
 ]
 
-[[source]]
-name = "system76-cudnn-9.0"
-build_on = "changelog"
+# [[source]]
+# name = "system76-cudnn-9.0"
+# build_on = "changelog"
+# keep_source = false
 
 [[source]]
 name = "system76-cudnn-9.2"
 build_on = "changelog"
+keep_source = false
 
 # Requirement for bazel, due to a serious issue with the certs in bionic.
 [[direct]]
