@@ -38,6 +38,11 @@ build_on = "changelog"
 keep_source = false
 
 [[source]]
+name = "system76-cudnn-9.1"
+build_on = "changelog"
+keep_source = false
+
+[[source]]
 name = "system76-cudnn-9.2"
 build_on = "changelog"
 keep_source = false
