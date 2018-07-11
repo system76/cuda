@@ -72,12 +72,12 @@ get_toolkit 9.0 \
         /2/cuda_9.0.176.2_linux-run=ec345f6d17d52c0ab6ea296ec389efdabca2ca56bddde8723bcea7be646ce5eb \
         /3/cuda_9.0.176.3_linux-run=429e2c30da8021ec10f047ce475bc628832a5f93110f5cf487f2327dfb1aa8ca"
 
-# get_toolkit 9.1 \
-#     cuda_9.1.85_387.26_linux \
-#     "8496c72b16fee61889f9281449b5d633d0b358b46579175c275d85c9205fe953" \
-#     "/1/cuda_9.1.85.1_linux=af9ce3d7ce4ea3b9b075135640077695f420d5dc585d76cbdae09d658b8ca3b8 \
-#         /2/cuda_9.1.85.2_linux=d59f07a35ba750fc8ab04e144e7556d03b57a4f1a0060f895615af0113e0e099 \
-#         /3/cuda_9.1.85.3_linux=421094368e4732677e5963d790fa161be2586ed90b291988477f8c8f9cd9ac8a"
+get_toolkit 9.1 \
+    cuda_9.1.85_387.26_linux \
+    "8496c72b16fee61889f9281449b5d633d0b358b46579175c275d85c9205fe953" \
+    "/1/cuda_9.1.85.1_linux=af9ce3d7ce4ea3b9b075135640077695f420d5dc585d76cbdae09d658b8ca3b8 \
+        /2/cuda_9.1.85.2_linux=d59f07a35ba750fc8ab04e144e7556d03b57a4f1a0060f895615af0113e0e099 \
+        /3/cuda_9.1.85.3_linux=421094368e4732677e5963d790fa161be2586ed90b291988477f8c8f9cd9ac8a"
 
 get_toolkit 9.2 \
     cuda_9.2.88_396.26_linux \
