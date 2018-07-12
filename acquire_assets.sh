@@ -59,7 +59,7 @@ CUDNN_9_0_URL="http://developer.download.nvidia.com/compute/redist/cudnn/v7.1.4/
 CUDNN_9_0_SUM="60b581d0f05324c33323024a264aa3fb185c533e2f67dae7fda847b926bb7e57"
 
 CUDNN_9_1="$PACKAGES/system76-cudnn-9.1/cudnn.tgz"
-CUDNN_9_1_URL"http://developer.download.nvidia.com/compute/redist/cudnn/v7.1.2/cudnn-9.1-linux-x64-v7.1.tgz"
+CUDNN_9_1_URL="http://developer.download.nvidia.com/compute/redist/cudnn/v7.1.2/cudnn-9.1-linux-x64-v7.1.tgz"
 CUDNN_9_1_SUM="c61000ed700bc5a009bc2e135bbdf736c9743212b2174a2fc9018a66cc0979ec"
 
 CUDNN_9_2="$PACKAGES/system76-cudnn-9.2/cudnn.tgz"
