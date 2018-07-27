@@ -2,7 +2,7 @@ archive = "bionic"
 version = "18.04"
 origin = "system76"
 label = "System76"
-email = "info@system76.com"
+email = "michael@system76.com"
 
 [[source]]
 name = "system76-cuda"
@@ -12,6 +12,7 @@ build_on = "changelog"
 name = "system76-cuda-9.0"
 build_on = "changelog"
 keep_source = false
+retain = 1
 assets = [
     { src = "cuda_makefile", dst = "Makefile" }
 ]
@@ -20,6 +21,7 @@ assets = [
 name = "system76-cuda-9.1"
 build_on = "changelog"
 keep_source = false
+retain = 1
 assets = [
     { src = "cuda_makefile", dst = "Makefile" }
 ]
@@ -28,6 +30,7 @@ assets = [
 name = "system76-cuda-9.2"
 build_on = "changelog"
 keep_source = false
+retain = 1
 assets = [
     { src = "cuda_makefile", dst = "Makefile" }
 ]
@@ -36,63 +39,54 @@ assets = [
 name = "system76-cudnn-9.0"
 build_on = "changelog"
 keep_source = false
+retain = 1
 
 [[source]]
 name = "system76-cudnn-9.1"
 build_on = "changelog"
 keep_source = false
+retain = 1
 
 [[source]]
 name = "system76-cudnn-9.2"
 build_on = "changelog"
+retain = 1
 keep_source = false
 
 # Requirement for bazel, due to a serious issue with the certs in bionic.
-# [[direct]]
-# name = "ca-certificates-java"
-# version = "20180516ubuntu1"
-#
-#     [[direct.urls]]
-#     url = "https://launchpad.net/ubuntu/+archive/primary/+files/ca-certificates-java_20180516ubuntu1_all.deb"
-#     checksum = ""
-#
-#     [[direct.urls]]
-#     url = "https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/ca-certificates-java/20180516ubuntu1/ca-certificates-java_20180516ubuntu1.tar.xz"
-#     checksum = ""
-#
-#     [[direct.urls]]
-#     url = "https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/ca-certificates-java/20180516ubuntu1/ca-certificates-java_20180516ubuntu1.dsc"
-#     checksum = ""
+[[direct]]
+name = "ca-certificates-java"
+version = "20180516ubuntu1"
+
+    [[direct.urls]]
+    url = "https://launchpad.net/ubuntu/+archive/primary/+files/${name}_${version}_all.deb"
+    checksum = "481434c8942f648c6ad2e8b744694a602614821ab44ebef41fa6277b00964619"
+
+    [[direct.urls]]
+    url = "https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/${name}/${version}/${name}_${version}.tar.xz"
+    checksum = "bceeddced640dc77d92ab9e580718bfbf796cbe3c020ddd8181cb394c12108c8"
+
+    [[direct.urls]]
+    url = "https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/${name}/${version}/${name}_${version}.dsc"
+    checksum = "1ce61ea1878e4c274b9cb94072ece81adf1ad6f8b675435a3b3934a784305966"
 
 # Build system required by tensorflow
-# [[source]]
-# name = "bazel"
-# build_on = "changelog"
-#
-#     [source.location]
-#     url = "https://github.com/bazelbuild/bazel/releases/download/0.15.0/bazel-0.15.0-dist.zip"
-#     checksum = "c3b716e6625e6b8c323350c95cd3ae0f56aeb00458dddd10544d5bead8a7b602"
+[[source]]
+name = "bazel"
+build_on = "changelog"
 
-# [[source]]
-# name = "tensorflow-1.8-cuda-9.2"
-# build_on = "changelog"
-# depends = [
-#     "ca-certificates-java",
-#     "bazel",
-#     "system76-cuda",
-#     "system76-cuda-9.2",
-#     "system76-cudnn-9.2",
-# ]
-#
-#     [source.location]
-#     url = "https://github.com/tensorflow/tensorflow/archive/v1.8.0.tar.gz"
-#     checksum = "cd45874be9296644471dd43e7da3fbd0"
+    [source.location]
+    url = "https://github.com/bazelbuild/bazel/releases/download/0.15.0/bazel-0.15.0-dist.zip"
+    checksum = "c3b716e6625e6b8c323350c95cd3ae0f56aeb00458dddd10544d5bead8a7b602"
 
-# [[source]]
-# name = "tensorflow-1.7"
-# debian = { path = "../tensorflow-1.7" }
-#
-#     [source.location]
-#     url = "https://github.com/tensorflow/tensorflow/archive/v1.7.1.tar.gz"
-#     checksum = "33ed4afb5b11b20090e2f6314c867f6c"
-#
+[[source]]
+name = "tensorflow-1.9-cuda-9.2"
+build_on = "changelog"
+retain = 1
+depends = [
+    "ca-certificates-java",
+    "bazel",
+    "system76-cuda",
+    "system76-cuda-9.2",
+    "system76-cudnn-9.2",
+]
