@@ -3,7 +3,6 @@ version = "18.04"
 origin = "system76"
 label = "System76"
 email = "michael@system76.com"
-default_branch = "main"
 
 [[source]]
 name = "system76-cuda"
