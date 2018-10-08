@@ -66,9 +66,14 @@ CUDNN_9_2="$PACKAGES/system76-cudnn-9.2/cudnn.tgz"
 CUDNN_9_2_URL="http://developer.download.nvidia.com/compute/redist/cudnn/v7.1.4/cudnn-9.2-linux-x64-v7.1.tgz"
 CUDNN_9_2_SUM="f875340f812b942408098e4c9807cb4f8bdaea0db7c48613acece10c7c827101"
 
+CUDNN_10_0="$PACKAGES/system76-cudnn-10.0/cudnn.tgz"
+CUDNN_10_0_URL="http://developer.download.nvidia.com/compute/redist/cudnn/v7.3.1/cudnn-10.0-linux-x64-v7.3.1.20.tgz"
+CUDNN_10_0_SUM="4e15a323f2edffa928b4574f696fc0e449a32e6bc35c9ccb03a47af26c2de3fa"
+
 fetch $CUDNN_9_0 $CUDNN_9_0_URL $CUDNN_9_0_SUM
 fetch $CUDNN_9_1 $CUDNN_9_1_URL $CUDNN_9_1_SUM
 fetch $CUDNN_9_2 $CUDNN_9_2_URL $CUDNN_9_2_SUM
+fetch $CUDNN_10_0 $CUDNN_10_0_URL $CUDNN_10_0_SUM
 
 get_toolkit 9.0 \
     cuda_9.0.176_384.81_linux-run \
@@ -88,3 +93,7 @@ get_toolkit 9.2 \
     cuda_9.2.88_396.26_linux \
     "8d02cc2a82f35b456d447df463148ac4cc823891be8820948109ad6186f2667c" \
     "/1/cuda_9.2.88.1_linux=d2f2d0e91959e4b9a93cd2fa82dced3541e3b8046c3ab7ae335d36f71dbbca13"
+
+get_toolkit 10.0 \
+    cuda_10.0.130_410.48_linux \
+    "92351f0e4346694d0fcb4ea1539856c9eb82060c25654463bfd8574ec35ee39a"
