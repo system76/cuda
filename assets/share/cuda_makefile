@@ -24,10 +24,12 @@ install:
 		--toolkit --toolkitpath=$(DESTDIR)$(PREFIX)/$(CUDA_DIR)
 
 	# Install all of the patches for this version.
-	for patch in patch-$(CUDA_VERSION)-*.run; do \
-		sh $$patch --accept-eula --silent \
-			--installdir=$(DESTDIR)$(PREFIX)/$(CUDA_DIR); \
-	done
+	if ls | grep patch; then \
+		for patch in patch-$(CUDA_VERSION)-*.run; do \
+			sh $$patch --accept-eula --silent \
+				--installdir=$(DESTDIR)$(PREFIX)/$(CUDA_DIR); \
+		done \
+	fi
 
 	# Fix the paths due to the packaging destination differing from the actual system destination.
 	find $(DESTDIR)$(PREFIX)/$(CUDA_DIR) -type f \
