@@ -1,0 +1,3 @@
+#!/bin/sh
+update-alternatives --install /usr/lib/tensorflow tensorflow /usr/lib/tensorflow1.11-cuda10.0/ 100
+ldconfig

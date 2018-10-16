@@ -1,0 +1,18 @@
+Source: system76-cuda
+Maintainer: Michael Aaron Murphy <michael@system76.com>
+Standards-Version: 4.1.1
+Priority: optional
+Section: metapackages
+Build-Depends: debhelper (>= 9)
+
+Package: system76-cuda
+Description: NVIDIA CUDA Compiler / Libraries / Toolkit Metapackage
+Architecture: amd64
+Section: devel
+Depends:
+    g++,
+    freeglut3-dev,
+    build-essential,
+    libx11-dev,
+    libxmu-dev,
+    ${misc:Depends},
