@@ -1,0 +1,5 @@
+tensorflow-1.9-cuda-9.2 (0pop1) bionic; urgency=medium
+
+  * Initial release.
+
+ -- Michael Murphy <michael@system76.com>  Mon, 27 Jul 2018 12:00:00 -0600

@@ -1,0 +1,11 @@
+tensorflow-1.9-cpu (0pop2) bionic; urgency=medium
+
+  * Fix postinst to use this package's alternative, rather than the CUDA version's.
+
+ -- Michael Murphy <michael@system76.com>  Tue, 8 Aug 2018 15:00:00 -0600
+
+tensorflow-1.9-cpu (0pop1) bionic; urgency=medium
+
+  * Initial release.
+
+ -- Michael Murphy <michael@system76.com>  Tue, 7 Aug 2018 12:00:00 -0600
