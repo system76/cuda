@@ -1,3 +1,9 @@
+tensorflow-1.9-cuda-9.2 (1.9cosmic~pop0) cosmic; urgency=medium
+
+  * Cosmic port.
+
+ -- Michael Murphy <michael@system76.com>  Mon, 8 Oct 2018 17:00:00 -0600
+
 tensorflow-1.9-cuda-9.2 (0pop1) bionic; urgency=medium
 
   * Initial release.
