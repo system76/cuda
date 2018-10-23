@@ -1,9 +1,3 @@
- system76-cuda (1cosmic~pop0) cosmic; urgency=medium
-
-  * Cosmic port.
-
- -- Michael Murphy <michael@system76.com>  Mon, 22 Oct 2018 14:00:00 -0600
-
 system76-cuda (0pop2) bionic; urgency=medium
 
   * Add lib directory path for CUPTI

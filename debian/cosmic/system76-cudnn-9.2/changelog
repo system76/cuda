@@ -1,9 +1,3 @@
-system76-cudnn-9.2 (7.1.4~cosmic~pop0) cosmic; urgency=medium
-
-  * Cosmic port.
-
- -- Michael Murphy <michael@system76.com>  Mon, 8 Oct 2018 17:00:00 -0600
-
 system76-cudnn-9.2 (7.1.4~0pop1) bionic; urgency=medium
 
   * Initial release.
