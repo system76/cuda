@@ -9,7 +9,7 @@ export CUDA_TOOLKIT_PATH=/usr/lib/cuda-10.0
 export HOME = $(shell pwd)/cache
 
 WHEEL_DIR = python-wheel
-WHEEL = tensorflow-1.9.0-cp36-cp36m-linux_x86_64.whl
+WHEEL = tensorflow-1.11.0-cp36-cp36m-linux_x86_64.whl
 C_API = libtensorflow.so
 CC_API = libtensorflow_cc.so
 

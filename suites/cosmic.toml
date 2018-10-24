@@ -3,6 +3,9 @@ version = "18.04"
 origin = "system76"
 label = "System76"
 email = "info@system76.com"
+extra_repos = [
+    "deb http://ppa.launchpad.net/system76/pop/ubuntu cosmic main"
+]
 
 [[source]]
 name = "system76-cuda"
@@ -65,6 +68,17 @@ retain = 1
 depends = [
     "bazel",
 ]
+
+# [[source]]
+# name = "tensorflow-1.11-cuda-10.0"
+# build_on = "changelog"
+# retain = 1
+# depends = [
+#     "bazel",
+#     "system76-cuda",
+#     "system76-cuda-10.0",
+#     "system76-cudnn-10.0",
+# ]
 
 # [[source]]
 # name = "pytorch-cuda"
