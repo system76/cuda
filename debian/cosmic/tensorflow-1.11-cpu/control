@@ -1,4 +1,4 @@
-Source: tensorflow-1.11-cuda-10.0
+Source: tensorflow-1.11-cpu
 Maintainer: Michael Aaron Murphy <michael@system76.com>
 Standards-Version: 4.1.1
 Priority: optional
@@ -28,7 +28,7 @@ Build-Depends:
     wget,
     zlib1g-dev,
 
-Package: tensorflow-1.11-cuda-10.0
+Package: tensorflow-1.11-cpu
 Description: An open source machine learning framework
 Architecture: amd64
 Section: devel
