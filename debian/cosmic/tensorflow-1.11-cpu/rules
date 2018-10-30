@@ -22,8 +22,6 @@ BUILD_PREFIX := $(shell echo $(BUILD_DIR) | sed 's/\//\\\//g')
 override_dh_auto_configure:
 
 override_dh_auto_build:
-	bash debian/deps.sh
-
 	mkdir build
 	cd build && cmake -DTENSORFLOW_STATIC=OFF -DTENSORFLOW_SHARED=ON \
 		-DCMAKE_INSTALL_PREFIX=../$(PREFIX) .. \
