@@ -1,4 +1,4 @@
-tensorflow-1.11-cuda-10.0 (1.11cosmic~pop0) cosmic; urgency=medium
+tensorflow-1.11-cpu (1.11cosmic~pop0) cosmic; urgency=medium
 
   * Cosmic port.
 
