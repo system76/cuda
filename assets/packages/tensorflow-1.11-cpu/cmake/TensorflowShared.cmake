@@ -16,6 +16,9 @@ ExternalProject_Add(
             COMMAND tensorflow/contrib/makefile/compile_nsync.sh
             COMMAND cp "${CMAKE_CURRENT_SOURCE_DIR}/cmake/build_tensorflow.sh" .
             COMMAND cp "${CMAKE_CURRENT_SOURCE_DIR}/cmake/copy_links.sh" .
+            # Fix github.com/tensorflow/tensorflow/issues/19840
+            COMMAND cp "${CMAKE_CURRENT_SOURCE_DIR}/stream.patch" .
+            COMMAND patch -p1 < stream.patch
             COMMAND ./build_tensorflow.sh
             COMMAND ./copy_links.sh .
   BUILD_COMMAND ""
