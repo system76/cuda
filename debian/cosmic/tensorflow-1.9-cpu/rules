@@ -55,3 +55,5 @@ override_dh_auto_install:
 	cp -r debian/assets/* $(PREFIX)
 
 override_dh_shlibdeps:
+
+override_dh_strip:
