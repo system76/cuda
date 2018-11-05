@@ -1,8 +1,14 @@
+tensorflow-1.11-cpu (1.11cosmic~pop4) cosmic; urgency=medium
+
+  * Set absl symlink via postinst instead of links.
+
+ -- Michael Murphy <michael@system76.com>  Fri, 5 Nov 2018 14:45:00 -0600
+
 tensorflow-1.11-cpu (1.11cosmic~pop3) cosmic; urgency=medium
 
   * Fix update-alternatives link.
 
- -- Michael Murphy <michael@system76.com>  Fri, 2 Nov 2018 09:00:00 -0600
+ -- Michael Murphy <michael@system76.com>  Fri, 5 Nov 2018 09:00:00 -0600
 
 tensorflow-1.11-cpu (1.11cosmic~pop2) cosmic; urgency=medium
 
