@@ -1,9 +1,3 @@
 #!/bin/sh
 update-alternatives --install /usr/lib/tensorflow tensorflow /usr/lib/tensorflow1.11-cuda10.0/ 100
-
-if [ -d /usr/lib/tensorflow1.11-cuda10.0/include/tensorflow/absl ]; then
-    ln -s /usr/lib/tensorflow1.11-cuda10.0/include/tensorflow/tensorflow/contrib/makefile/downloads/absl/absl \
-        /usr/lib/tensorflow1.11-cuda10.0/include/tensorflow/
-fi
-
 ldconfig
