@@ -1,3 +1,9 @@
+tensorflow-1.11-cpu (1.11cosmic~pop3) cosmic; urgency=medium
+
+  * Fix update-alternatives link.
+
+ -- Michael Murphy <michael@system76.com>  Fri, 2 Nov 2018 09:00:00 -0600
+
 tensorflow-1.11-cpu (1.11cosmic~pop2) cosmic; urgency=medium
 
   * Prevent stripping, which causes errors in some of the packaged solibs.
