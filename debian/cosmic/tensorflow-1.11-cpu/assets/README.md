@@ -1,4 +1,4 @@
-# TensorFlow 1.11 for CUDA 10.0
+# TensorFlow 1.11
 
 The `include` directory contains the headers needed for the C & C++ APIs. The `lib` directory contains static builds of shared libraries for the C and C++ API, as well as the unpackaged Python wheel for Python 3.6.
 

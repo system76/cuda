@@ -12,7 +12,7 @@ WHEEL = tensorflow-1.11.0-cp36-cp36m-linux_x86_64.whl
 C_API = libtensorflow.so
 CC_API = libtensorflow_cc.so
 
-PREFIX := usr/lib/tensorflow1.11-cuda10.0
+PREFIX := usr/lib/tensorflow1.11-cpu
 LIB = $(PREFIX)/lib
 INCLUDE = $(PREFIX)/include
 PYTHON_TARGET = $(LIB)/python3.6/
