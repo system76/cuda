@@ -30,26 +30,6 @@ export TF_NCCL_VERSION=${TF_NCCL_VERSION:-1.3}  # _DEFAULT_NCCL_VERSION from con
 export PYTHON_BIN_PATH=${PYTHON_BIN_PATH:-"$(which python3)"}
 export PYTHON_LIB_PATH="$($PYTHON_BIN_PATH -c 'import site; print(site.getsitepackages()[0])')"
 
-## NOTE: These were removed because we will define them in the build script.
-# if [ -e /opt/cuda ]; then
-#     echo "Using CUDA from /opt/cuda"
-#     export CUDA_TOOLKIT_PATH=/opt/cuda
-# elif [ -e /usr/local/cuda ]; then
-#     echo "Using CUDA from /usr/local/cuda"
-#     export CUDA_TOOLKIT_PATH=/usr/local/cuda
-# fi
-#
-# if [ -e /opt/cuda/include/cudnn.h ]; then
-#     echo "Using CUDNN from /opt/cuda"
-#     export CUDNN_INSTALL_PATH=/opt/cuda
-# elif [ -e /usr/local/cuda/include/cudnn.h ]; then
-#     echo "Using CUDNN from /usr/local/cuda"
-#     export CUDNN_INSTALL_PATH=/usr/local/cuda
-# elif [ -e /usr/include/cudnn.h ]; then
-#     echo "Using CUDNN from /usr"
-#     export CUDNN_INSTALL_PATH=/usr
-# fi
-
 export CUDNN_INSTALL_PATH=$CUDA_TOOLKIT_PATH
 
 if [ -n "${CUDA_TOOLKIT_PATH}" ]; then

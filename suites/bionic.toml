@@ -81,6 +81,9 @@ build_on = "changelog"
 name = "tensorflow-1.9-cuda-9.2"
 build_on = "changelog"
 retain = 1
+assets = [
+    { src = "tensorflow-1.9/*", dst = "." }
+]
 depends = [
     "bazel",
     "system76-cuda",
@@ -92,9 +95,10 @@ depends = [
 name = "tensorflow-1.9-cpu"
 build_on = "changelog"
 retain = 1
-depends = [
-    "bazel",
+assets = [
+    { src = "tensorflow-1.9/*", dst = "." }
 ]
+depends = [ "bazel" ]
 
 # [[source]]
 # name = "pytorch-cuda"

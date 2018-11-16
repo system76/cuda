@@ -12,6 +12,10 @@ ExternalProject_Add(
   BUILD_IN_SOURCE 1
   UPDATE_COMMAND ""
   CONFIGURE_COMMAND make -f tensorflow/contrib/makefile/Makefile clean
+            # Fix github.com/tensorflow/tensorflow/issues/19840
+            COMMAND cp "${CMAKE_CURRENT_SOURCE_DIR}/stream.patch" .
+            COMMAND patch -p1 < stream.patch
+
             COMMAND tensorflow/contrib/makefile/download_dependencies.sh
   BUILD_COMMAND ""
   INSTALL_COMMAND ""

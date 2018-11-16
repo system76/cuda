@@ -2,7 +2,7 @@ archive = "cosmic"
 version = "18.04"
 origin = "system76"
 label = "System76"
-email = "info@system76.com"
+email = "michael@system76.com"
 
 extra_repos = [ "deb http://ppa.launchpad.net/system76/pop/ubuntu cosmic main" ]
 
@@ -53,6 +53,9 @@ build_on = "changelog"
 name = "tensorflow-1.9-cuda-9.2"
 build_on = "changelog"
 retain = 1
+assets = [
+    { src = "tensorflow-1.9/*", dst = "." }
+]
 depends = [
     "bazel",
     "system76-cuda",
@@ -64,14 +67,18 @@ depends = [
 name = "tensorflow-1.9-cpu"
 build_on = "changelog"
 retain = 1
-depends = [
-    "bazel",
+assets = [
+    { src = "tensorflow-1.9/*", dst = "." }
 ]
+depends = [ "bazel" ]
 
 [[source]]
 name = "tensorflow-1.11-cuda-10.0"
 build_on = "changelog"
 retain = 1
+assets = [
+    { src = "tensorflow-1.11/*", dst = "." }
+]
 depends = [
     "bazel",
     "system76-cuda",
@@ -83,9 +90,10 @@ depends = [
 name = "tensorflow-1.11-cpu"
 build_on = "changelog"
 retain = 1
-depends = [
-    "bazel",
+assets = [
+    { src = "tensorflow-1.11/*", dst = "." }
 ]
+depends = [ "bazel" ]
 
 [[source]]
 name = "tensorflow-1.12-cuda-10.0"
