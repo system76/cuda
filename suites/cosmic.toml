@@ -9,10 +9,16 @@ extra_repos = [ "deb http://ppa.launchpad.net/system76/pop/ubuntu cosmic main" ]
 [[source]]
 name = "system76-cuda"
 build_on = "changelog"
+assets = [
+    { src = "nvidia_cuda/*", dst = "debian"}
+]
 
 [[source]]
 name = "system76-cuda-9.2"
 build_on = "changelog"
+assets = [
+    { src = "nvidia_cuda/*", dst = "debian"}
+]
 keep_source = false
 retain = 1
 assets = [
@@ -22,6 +28,9 @@ assets = [
 [[source]]
 name = "system76-cuda-10.0"
 build_on = "changelog"
+assets = [
+    { src = "nvidia_cuda/*", dst = "debian"}
+]
 keep_source = false
 retain = 1
 assets = [
@@ -31,12 +40,18 @@ assets = [
 [[source]]
 name = "system76-cudnn-9.2"
 build_on = "changelog"
+assets = [
+    { src = "nvidia_cuda/*", dst = "debian"}
+]
 retain = 1
 keep_source = false
 
 [[source]]
 name = "system76-cudnn-10.0"
 build_on = "changelog"
+assets = [
+    { src = "nvidia_cuda/*", dst = "debian"}
+]
 retain = 1
 keep_source = false
 
