@@ -14,45 +14,36 @@ assets = [
 [[source]]
 name = "system76-cuda-9.0"
 build_on = "changelog"
-assets = [
-    { src = "nvidia_cuda/*", dst = "debian"}
-]
 keep_source = false
 retain = 1
 assets = [
-    { src = "cuda_makefile", dst = "Makefile" }
+    { src = "cuda_makefile", dst = "Makefile" },
+    { src = "nvidia_cuda/*", dst = "debian"}
 ]
 
 [[source]]
 name = "system76-cuda-9.1"
 build_on = "changelog"
-assets = [
-    { src = "nvidia_cuda/*", dst = "debian"}
-]
 keep_source = false
 retain = 1
 assets = [
-    { src = "cuda_makefile", dst = "Makefile" }
+    { src = "cuda_makefile", dst = "Makefile" },
+    { src = "nvidia_cuda/*", dst = "debian"}
 ]
 
 [[source]]
 name = "system76-cuda-9.2"
 build_on = "changelog"
-assets = [
-    { src = "nvidia_cuda/*", dst = "debian"}
-]
 keep_source = false
 retain = 1
 assets = [
-    { src = "cuda_makefile", dst = "Makefile" }
+    { src = "cuda_makefile", dst = "Makefile" },
+    { src = "nvidia_cuda/*", dst = "debian"}
 ]
 
 [[source]]
 name = "system76-cuda-10.0"
 build_on = "changelog"
-assets = [
-    { src = "nvidia_cuda/*", dst = "debian"}
-]
 keep_source = false
 retain = 1
 assets = [
