@@ -54,7 +54,8 @@ name = "tensorflow-1.9-cuda-9.2"
 build_on = "changelog"
 retain = 1
 assets = [
-    { src = "tensorflow-1.9/*", dst = "." }
+    { src = "tensorflow-1.9/*", dst = "." },
+    { src = "tensorflow/*", dst = "debian" }
 ]
 depends = [
     "bazel",
@@ -68,7 +69,8 @@ name = "tensorflow-1.9-cpu"
 build_on = "changelog"
 retain = 1
 assets = [
-    { src = "tensorflow-1.9/*", dst = "." }
+    { src = "tensorflow-1.9/*", dst = "." },
+    { src = "tensorflow/*", dst = "debian" }
 ]
 depends = [ "bazel" ]
 
@@ -77,7 +79,8 @@ name = "tensorflow-1.11-cuda-10.0"
 build_on = "changelog"
 retain = 1
 assets = [
-    { src = "tensorflow-1.11/*", dst = "." }
+    { src = "tensorflow-1.11/*", dst = "." },
+    { src = "tensorflow/*", dst = "debian" }
 ]
 depends = [
     "bazel",
@@ -91,7 +94,8 @@ name = "tensorflow-1.11-cpu"
 build_on = "changelog"
 retain = 1
 assets = [
-    { src = "tensorflow-1.11/*", dst = "." }
+    { src = "tensorflow-1.11/*", dst = "." },
+    { src = "tensorflow/*", dst = "debian" }
 ]
 depends = [ "bazel" ]
 
@@ -100,7 +104,8 @@ name = "tensorflow-1.12-cuda-10.0"
 build_on = "changelog"
 retain = 1
 assets = [
-    { src = "tensorflow-1.12/*", dst = "." }
+    { src = "tensorflow-1.12/*", dst = "." },
+    { src = "tensorflow/*", dst = "debian" }
 ]
 depends = [
     "bazel",
@@ -114,7 +119,8 @@ name = "tensorflow-1.12-cpu"
 build_on = "changelog"
 retain = 1
 assets = [
-    { src = "tensorflow-1.12/*", dst = "." }
+    { src = "tensorflow-1.12/*", dst = "." },
+    { src = "tensorflow/*", dst = "debian" }
 ]
 depends = [ "bazel" ]
 
