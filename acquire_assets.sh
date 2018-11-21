@@ -63,12 +63,12 @@ CUDNN_9_1_URL="http://developer.download.nvidia.com/compute/redist/cudnn/v7.1.2/
 CUDNN_9_1_SUM="c61000ed700bc5a009bc2e135bbdf736c9743212b2174a2fc9018a66cc0979ec"
 
 CUDNN_9_2="$PACKAGES/system76-cudnn-9.2/cudnn.tgz"
-CUDNN_9_2_URL="http://developer.download.nvidia.com/compute/redist/cudnn/v7.1.4/cudnn-9.2-linux-x64-v7.1.tgz"
-CUDNN_9_2_SUM="f875340f812b942408098e4c9807cb4f8bdaea0db7c48613acece10c7c827101"
+CUDNN_9_2_URL="http://developer.download.nvidia.com/compute/redist/cudnn/v7.4.1/cudnn-9.2-linux-x64-v7.4.1.5.tgz"
+CUDNN_9_2_SUM="a850d62f32c6a18271932d9a96072ac757c2c516bd1200ae8b79e4bdd3800b5b"
 
 CUDNN_10_0="$PACKAGES/system76-cudnn-10.0/cudnn.tgz"
-CUDNN_10_0_URL="http://developer.download.nvidia.com/compute/redist/cudnn/v7.3.1/cudnn-10.0-linux-x64-v7.3.1.20.tgz"
-CUDNN_10_0_SUM="4e15a323f2edffa928b4574f696fc0e449a32e6bc35c9ccb03a47af26c2de3fa"
+CUDNN_10_0_URL="http://developer.download.nvidia.com/compute/redist/cudnn/v7.4.1/cudnn-10.0-linux-x64-v7.4.1.5.tgz"
+CUDNN_10_0_SUM="b320606f1840eec0cdd4453cb333554a3fe496dd4785f10d8e87fe1a4f52bd5c"
 
 fetch $CUDNN_9_0 $CUDNN_9_0_URL $CUDNN_9_0_SUM
 fetch $CUDNN_9_1 $CUDNN_9_1_URL $CUDNN_9_1_SUM

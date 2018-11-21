@@ -1,3 +1,9 @@
+system76-cudnn-9.2 (7.4.1.5~0pop0) cosmic; urgency=medium
+
+  * Initial release.
+
+ -- Michael Murphy <michael@system76.com>  Wed, 21 Nov 2018 10:00:00 -0600
+
 system76-cudnn-9.2 (7.1.4~0pop1) bionic; urgency=medium
 
   * Initial release.
