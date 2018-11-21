@@ -1,0 +1,60 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+BUILD_DIR = $(shell pwd)
+
+export HOME = $(shell pwd)/cache
+
+WHEEL_DIR = python-wheel
+WHEEL = tensorflow-1.12.0-cp36-cp36m-linux_x86_64.whl
+C_API = libtensorflow.so
+CC_API = libtensorflow_cc.so
+
+PREFIX := usr/lib/tensorflow1.12-cpu
+LIB = $(PREFIX)/lib
+INCLUDE = $(PREFIX)/include
+PYTHON_TARGET = $(LIB)/python3.6/
+
+BUILD_PREFIX := $(shell echo $(BUILD_DIR) | sed 's/\//\\\//g')
+
+override_dh_auto_configure:
+
+override_dh_auto_build:
+	mkdir build
+	cd build && cmake -DTENSORFLOW_STATIC=OFF -DTENSORFLOW_SHARED=ON \
+		-DCMAKE_INSTALL_PREFIX=../$(PREFIX) .. \
+		&& make
+
+	cd build/tensorflow && ./bazel-bin/tensorflow/tools/pip_package/build_pip_package \
+		$(WHEEL_DIR)
+
+override_dh_auto_install:
+	mkdir -p $(LIB) $(INCLUDE)/tensorflow/c/eager/
+
+	# C++ API
+	cd build && make install
+
+	# C API
+	cd build/tensorflow \
+		&& cp -r tensorflow/c/c_api.h tensorflow/c/c_api_experimental.h \
+			../../$(INCLUDE)/tensorflow/c \
+		&& cp -r tensorflow/c/eager/c_api.h \
+			../../$(INCLUDE)/tensorflow/c/eager \
+		&& cp ./bazel-bin/tensorflow/libtensorflow.so \
+			../../$(LIB)
+
+	# Python API
+	cd build/tensorflow && \
+		pip3 install $(WHEEL_DIR)/$(WHEEL) -t ../../$(PYTHON_TARGET)
+
+	# Strip the build root from paths
+	find $(PREFIX) -type f -exec sed -i "s/$(BUILD_PREFIX)//g" {} \;
+
+	# Copy extra assets into the package
+	cp -r debian/assets/* $(PREFIX)
+
+override_dh_shlibdeps:
+
+override_dh_strip:
