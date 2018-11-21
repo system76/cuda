@@ -24,7 +24,6 @@ Build-Depends:
     python3-pip,
     python3-setuptools,
     python3-wheel,
-    system76-cudnn-10.0,
     unzip,
     wget,
     zlib1g-dev,
