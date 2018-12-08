@@ -1,10 +1,22 @@
-# System76 CUDA Toolkit Packaging
+# System76 CUDA SDK + Tensorflow Packaging
 
 Due to issues with how NVIDIA and Canonical package the CUDA toolkit, System76 is offering better
 packaging for our users. This provides all of the debian packaging information needed to build
 multiple versions of the CUDA toolkit in parallel, where the resulting packages may be installed
 alongside each other. Users that install multiple toolkits only need to use `update-alternatives`
 to switch between different versions of the toolkit.
+
+> This repository is designed around our [debrep](https://github.com/pop-os/debrepbuild) tool. It
+provides the means to generate and maintain apt repositories based on a TOML spec and file system
+hierarchy. Using debrep, the data contained in the assets and debian directories are merged
+together and built with `sbuild`, then stored in a repo pool.
+
+## tensorflow-{cuda,cpu}
+
+These packages are built with C, C++, and Python support. Similar to the CUDA packaging, it is
+possible to alternate between different versions of Tensorflow. We backport fixes to older
+versions of Tensorflow when possible. The build system we use is based on
+[FloopCZ's work on a Cmake build system](https://github.com/FloopCZ/tensorflow_cc).
 
 ## system76-cuda Metapackage
 
@@ -23,7 +35,7 @@ the directory.
 
 ## Listing & Switching Between Toolkits
 
-The `update-altneratives` command may be used to view installed toolkits, and switch between them.
+The `update-alternatives` command may be used to view installed toolkits, and switch between them.
 
 ```
 sudo update-alternatives --list cuda
