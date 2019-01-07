@@ -1,0 +1,62 @@
+Source: tensorflow-1.12-cuda-10.0
+Maintainer: Michael Aaron Murphy <michael@system76.com>
+Standards-Version: 4.1.1
+Priority: optional
+Section: devel
+Build-Depends:
+    autoconf,
+    autogen,
+    bazel,
+    build-essential,
+    cmake,
+    curl,
+    debhelper (>= 9),
+    g++-7,
+    git,
+    libnvidia-compute-410,
+    libtool,
+    mlocate,
+    python,
+    python3-dev,
+    python3-keras (>= 2.2.2),
+    python3-keras-applications (>= 1.0.5),
+    python3-keras-preprocessing (>= 1.0.3),
+    python3-numpy,
+    python3-pip,
+    python3-setuptools,
+    python3-wheel,
+    system76-cudnn-10.0,
+    system76-nccl-10.0,
+    unzip,
+    wget,
+    zlib1g-dev,
+
+Package: tensorflow-1.12-cuda-10.0
+Description: An open source machine learning framework
+Architecture: amd64
+Section: devel
+Depends:
+    autoconf,
+    autogen,
+    build-essential,
+    cmake,
+    curl,
+    g++-7,
+    git,
+    libtool,
+    mlocate,
+    python,
+    python3-dev,
+    python3-keras (>= 2.2.2),
+    python3-keras-applications (>= 1.0.5),
+    python3-keras-preprocessing (>= 1.0.3),
+    python3-numpy,
+    python3-pip,
+    python3-setuptools,
+    python3-wheel,
+    system76-cudnn-10.0,
+    system76-nccl-10.0,
+    unzip,
+    wget,
+    zlib1g-dev,
+    ${misc:Depends},

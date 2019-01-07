@@ -1,0 +1,80 @@
+archive = "disco"
+version = "19.10"
+origin = "system76"
+label = "System76"
+email = "info@system76.com"
+
+extra_repos = [ "deb http://ppa.launchpad.net/system76/pop/ubuntu disco main" ]
+
+[[source]]
+name = "system76-cuda"
+build_on = "changelog"
+assets = [
+    { src = "nvidia_cuda/*", dst = "debian"}
+]
+
+[[source]]
+name = "system76-cuda-10.0"
+build_on = "changelog"
+keep_source = false
+retain = 1
+assets = [
+    { src = "cuda_makefile", dst = "Makefile" },
+    { src = "nvidia_cuda/*", dst = "debian"}
+]
+
+[[source]]
+name = "system76-cudnn-10.0"
+build_on = "changelog"
+assets = [
+    { src = "nvidia_cuda/*", dst = "debian"}
+]
+retain = 1
+keep_source = false
+
+[[source]]
+name = "system76-nccl-10.0"
+build_on = "changelog"
+depends = [
+    "system76-cuda",
+    "system76-cuda-10.0",
+]
+
+    [source.location]
+    url = "https://github.com/NVIDIA/nccl/archive/v2.3.7-1.tar.gz"
+    checksum = "e6eff80d9d2db13c61f8452e1400ca2f098d2dfe42857cb23413ce081c5b9e9b"
+
+# # Build system required by tensorflow
+# [[source]]
+# name = "bazel"
+# build_on = "changelog"
+
+#     [source.location]
+#     url = "https://github.com/bazelbuild/bazel/releases/download/0.16.1/bazel-0.16.1-dist.zip"
+#     checksum = "09c66b94356c82c52f212af52a81ac28eb06de1313755a2f23eeef84d167b36c"
+
+# [[source]]
+# name = "tensorflow-1.12-cuda-10.0"
+# build_on = "changelog"
+# retain = 1
+# assets = [
+#     { src = "tensorflow-1.12/*", dst = "." },
+#     { src = "tensorflow/*", dst = "debian" }
+# ]
+# depends = [
+#     "bazel",
+#     "system76-cuda",
+#     "system76-cuda-10.0",
+#     "system76-cudnn-10.0",
+#     "system76-nccl-10.0",
+# ]
+
+# [[source]]
+# name = "tensorflow-1.12-cpu"
+# build_on = "changelog"
+# retain = 1
+# assets = [
+#     { src = "tensorflow-1.12/*", dst = "." },
+#     { src = "tensorflow/*", dst = "debian" }
+# ]
+# depends = [ "bazel" ]
