@@ -4,9 +4,8 @@ INSTALLER_URL = $(REMOTE_CUDA_DIR)/local_installers/$(INSTALLER)
 CUDA_DIR = cuda-$(CUDA_VERSION)
 
 PREFIX ?= /usr/lib
-BEFORE := $(shell echo $(DESTDIR)$(PREFIX) | sed 's/\//\\\//g')
-AFTER := $(shell echo $(PREFIX) | sed 's/\//\\\//g')
 
+BEFORE = $(DESTDIR)$(PREFIX)
 .PHONY: all clean install
 
 all:
@@ -21,17 +20,20 @@ clean:
 install:
 	./$(SCRIPT) --silent --override \
 		--no-opengl-libs --no-drm \
-		--toolkit --toolkitpath=$(DESTDIR)$(PREFIX)/$(CUDA_DIR)
+		--toolkit --toolkitpath=$(BEFORE)/$(CUDA_DIR)
+
+	ls $(BEFORE)
+	ls $(BEFORE)/$(CUDA_DIR)
 
 	# Install all of the patches for this version.
 	if ls | grep patch; then \
 		for patch in patch-$(CUDA_VERSION)-*.run; do \
 			sh $$patch --accept-eula --silent \
-				--installdir=$(DESTDIR)$(PREFIX)/$(CUDA_DIR); \
+				--installdir=$(BEFORE)/$(CUDA_DIR); \
 		done \
 	fi
 
 	# Fix the paths due to the packaging destination differing from the actual system destination.
-	find $(DESTDIR)$(PREFIX)/$(CUDA_DIR) -type f \
+	find $(BEFORE)/$(CUDA_DIR) -type f \
 		-not -name '*.so' -not -name '*.a' \
-		-exec sed -i -e 's/$(BEFORE)/$(AFTER)/g; s/usr\/local/$(AFTER)/g' {} \;
+		-exec sed -i -e 's#$(BEFORE)#$(PREFIX)#g; s#usr/local#$(PREFIX)#g' {} \;
