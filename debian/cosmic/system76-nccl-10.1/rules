@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-CUDA_SDK=usr/lib/cuda-10.0/
+CUDA_SDK=usr/lib/cuda-10.1/
 export CC=/usr/bin/gcc-7
 export CXX=/usr/bin/g++-7
 

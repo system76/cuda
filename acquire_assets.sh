@@ -54,26 +54,16 @@ function get_toolkit {
     chmod +x $SCRIPT
 }
 
-CUDNN_9_0="$PACKAGES/system76-cudnn-9.0/cudnn.tgz"
-CUDNN_9_0_URL="http://developer.download.nvidia.com/compute/redist/cudnn/v7.1.4/cudnn-9.0-linux-x64-v7.1.tgz"
-CUDNN_9_0_SUM="60b581d0f05324c33323024a264aa3fb185c533e2f67dae7fda847b926bb7e57"
+get_cudnn () {
+    fetch "$PACKAGES/system76-cudnn-$1/cudnn.tgz" \
+        "http://developer.download.nvidia.com/compute/redist/cudnn/v$2/cudnn-$1-linux-x64-v$3.tgz" $4
+}
 
-CUDNN_9_1="$PACKAGES/system76-cudnn-9.1/cudnn.tgz"
-CUDNN_9_1_URL="http://developer.download.nvidia.com/compute/redist/cudnn/v7.1.2/cudnn-9.1-linux-x64-v7.1.tgz"
-CUDNN_9_1_SUM="c61000ed700bc5a009bc2e135bbdf736c9743212b2174a2fc9018a66cc0979ec"
-
-CUDNN_9_2="$PACKAGES/system76-cudnn-9.2/cudnn.tgz"
-CUDNN_9_2_URL="http://developer.download.nvidia.com/compute/redist/cudnn/v7.4.1/cudnn-9.2-linux-x64-v7.4.1.5.tgz"
-CUDNN_9_2_SUM="a850d62f32c6a18271932d9a96072ac757c2c516bd1200ae8b79e4bdd3800b5b"
-
-CUDNN_10_0="$PACKAGES/system76-cudnn-10.0/cudnn.tgz"
-CUDNN_10_0_URL="http://developer.download.nvidia.com/compute/redist/cudnn/v7.4.1/cudnn-10.0-linux-x64-v7.4.1.5.tgz"
-CUDNN_10_0_SUM="b320606f1840eec0cdd4453cb333554a3fe496dd4785f10d8e87fe1a4f52bd5c"
-
-fetch $CUDNN_9_0 $CUDNN_9_0_URL $CUDNN_9_0_SUM
-fetch $CUDNN_9_1 $CUDNN_9_1_URL $CUDNN_9_1_SUM
-fetch $CUDNN_9_2 $CUDNN_9_2_URL $CUDNN_9_2_SUM
-fetch $CUDNN_10_0 $CUDNN_10_0_URL $CUDNN_10_0_SUM
+get_cudnn "9.0" "7.1.4" "7.1" "60b581d0f05324c33323024a264aa3fb185c533e2f67dae7fda847b926bb7e57"
+get_cudnn "9.1" "7.1.2" "7.1" "c61000ed700bc5a009bc2e135bbdf736c9743212b2174a2fc9018a66cc0979ec"
+get_cudnn "9.2" "7.4.1" "7.4.1.5" "a850d62f32c6a18271932d9a96072ac757c2c516bd1200ae8b79e4bdd3800b5b"
+get_cudnn "10.0" "7.4.1" "7.4.1.5" "b320606f1840eec0cdd4453cb333554a3fe496dd4785f10d8e87fe1a4f52bd5c"
+get_cudnn "10.1" "7.5.0" "7.5.0.56" "c31697d6b71afe62838ad2e57da3c3c9419c4e9f5635d14b683ebe63f904fbc8"
 
 get_toolkit 9.0 \
     cuda_9.0.176_384.81_linux-run \
@@ -97,3 +87,7 @@ get_toolkit 9.2 \
 get_toolkit 10.0 \
     cuda_10.0.130_410.48_linux \
     "92351f0e4346694d0fcb4ea1539856c9eb82060c25654463bfd8574ec35ee39a"
+
+get_toolkit 10.1 \
+    cuda_10.1.105_418.39_linux.run \
+    "33ac60685a3e29538db5094259ea85c15906cbd0f74368733f4111eab6187c8f"

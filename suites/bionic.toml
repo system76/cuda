@@ -86,6 +86,24 @@ assets = [
 retain = 1
 keep_source = false
 
+[[source]]
+name = "system76-cuda-10.1"
+build_on = "changelog"
+keep_source = false
+retain = 1
+assets = [
+    { src = "cuda_makefile", dst = "Makefile" },
+]
+
+[[source]]
+name = "system76-cudnn-10.1"
+build_on = "changelog"
+assets = [
+    { src = "nvidia_cuda/*", dst = "debian"}
+]
+retain = 1
+keep_source = false
+
 # Build system required by tensorflow
 [[source]]
 name = "bazel"

@@ -14,17 +14,16 @@ assets = [
 ]
 
 [[source]]
-name = "system76-cuda-10.0"
+name = "system76-cuda-10.1"
 build_on = "changelog"
 keep_source = false
 retain = 1
 assets = [
     { src = "cuda_makefile", dst = "Makefile" },
-    { src = "nvidia_cuda/*", dst = "debian"}
 ]
 
 [[source]]
-name = "system76-cudnn-10.0"
+name = "system76-cudnn-10.1"
 build_on = "changelog"
 assets = [
     { src = "nvidia_cuda/*", dst = "debian"}
@@ -33,16 +32,16 @@ retain = 1
 keep_source = false
 
 [[source]]
-name = "system76-nccl-10.0"
+name = "system76-nccl-10.1"
 build_on = "changelog"
 depends = [
     "system76-cuda",
-    "system76-cuda-10.0",
+    "system76-cuda-10.1",
 ]
 
     [source.location]
-    url = "https://github.com/NVIDIA/nccl/archive/v2.3.7-1.tar.gz"
-    checksum = "e6eff80d9d2db13c61f8452e1400ca2f098d2dfe42857cb23413ce081c5b9e9b"
+    url = "https://github.com/NVIDIA/nccl/archive/v2.4.2-1.tar.gz"
+    checksum = "e3dd04b22eb541394bd818e5f78ac23a09cc549690d5d55d6fccc1a36155385a"
 
 # # Build system required by tensorflow
 # [[source]]
