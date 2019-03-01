@@ -75,17 +75,20 @@ fi
 # configure and build
 ./configure
 
+echo "building libtensorflow_cc.so"
 bazel build --config=opt \
     --config=monolithic \
     $cuda_config_opts \
     tensorflow:libtensorflow_cc.so
 
+echo "building libtensorflow.so"
 bazel build --config=opt \
     --config=monolithic \
     $cuda_config_opts \
     //tensorflow:libtensorflow.so
 
 # Python API
+echo "building Python pip_package"
 bazel build --config=opt \
     --config=monolithic \
     $cuda_config_opts \
