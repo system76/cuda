@@ -18,12 +18,10 @@ all:
 clean:
 
 install:
+	mkdir -p $(BEFORE)/$(CUDA_DIR)
 	./$(SCRIPT) --silent --override \
 		--no-opengl-libs --no-drm \
 		--toolkit --toolkitpath=$(BEFORE)/$(CUDA_DIR)
-
-	ls $(BEFORE)
-	ls $(BEFORE)/$(CUDA_DIR)
 
 	# Install all of the patches for this version.
 	if ls | grep patch; then \
