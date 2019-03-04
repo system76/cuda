@@ -41,7 +41,7 @@ override_dh_auto_install:
 			../../$(INCLUDE)/tensorflow/c \
 		&& cp -r tensorflow/c/eager/c_api.h \
 			../../$(INCLUDE)/tensorflow/c/eager \
-		&& cp ./bazel-bin/bin/tensorflow/libtensorflow.so \
+		&& cp ./bazel-bin/tensorflow/libtensorflow.so \
 			../../$(LIB)
 
 	# Python API
