@@ -215,10 +215,12 @@ if(TENSORFLOW_SHARED)
   install(
     FILES "${CMAKE_CURRENT_BINARY_DIR}/tensorflow/bazel-bin/bin/tensorflow/libtensorflow_cc.so"
     DESTINATION lib/tensorflow_cc
+    OPTIONAL
   )
   install(
     FILES "${CMAKE_CURRENT_BINARY_DIR}/tensorflow/bazel-bin/tensorflow/libtensorflow_cc.so"
     DESTINATION lib/tensorflow_cc
+    OPTIONAL
   )
 endif()
 # static library specific
