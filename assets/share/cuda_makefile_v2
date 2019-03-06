@@ -18,9 +18,7 @@ all:
 clean:
 
 install:
-	mkdir -p $(BEFORE)/$(CUDA_DIR)/include/ \
-		$(BEFORE)/$(CUDA_DIR)/lib64/ \
-		build
+	mkdir -p $(BEFORE)/$(CUDA_DIR) build
 
 	./$(SCRIPT) --extract=$(PWD)/build
 
