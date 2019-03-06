@@ -1,0 +1,55 @@
+SCRIPT = installer-$(CUDA_VERSION)
+REMOTE_CUDA_DIR = https://developer.nvidia.com/compute/cuda/$(CUDA_VERSION)/Prod
+INSTALLER_URL = $(REMOTE_CUDA_DIR)/local_installers/$(INSTALLER)
+CUDA_DIR = cuda-$(CUDA_VERSION)
+
+PREFIX ?= /usr/lib
+
+BEFORE = $(DESTDIR)$(PREFIX)
+.PHONY: all clean install
+
+all:
+	# Download the installer if it does not already exist, or has an invalid checksum
+	if [ ! -f $(SCRIPT) ] || [ $(shell md5sum $(SCRIPT) | cut -d' ' -f1) != $(INSTALLER_SUM) ]; then \
+		echo installer checksum does not match; \
+		exit 1; \
+	fi
+
+clean:
+
+install:
+	mkdir -p $(BEFORE)/$(CUDA_DIR)/include/ \
+		$(BEFORE)/$(CUDA_DIR)/lib64/ \
+		build
+
+	./$(SCRIPT) --extract=$(PWD)/build
+
+	mv build/cuda-toolkit/* $(BEFORE)/$(CUDA_DIR)/
+
+	if test -e build/cuda-samples; then \
+	    mv build/cuda-samples $(BEFORE)/$(CUDA_DIR)/samples; \
+	fi
+
+	if test -e build/cublas; then \
+		cp -a build/cublas/include/* $(BEFORE)/$(CUDA_DIR)/include/; \
+		cp -a build/cublas/lib64/* $(BEFORE)/$(CUDA_DIR)/lib64/; \
+		rm -R build/cublas/include build/cublas/lib64; \
+		cp -a build/cublas/* $(BEFORE)/$(CUDA_DIR)/; \
+	fi
+
+	if test -e build/EULA.txt; then \
+		mv build/EULA.txt $(BEFORE)/$(CUDA_DIR)/; \
+	fi
+
+	# Install all of the patches for this version.
+	if ls | grep patch; then \
+		for patch in patch-$(CUDA_VERSION)-*.run; do \
+			sh $$patch --accept-eula --silent \
+				--installdir=$(BEFORE)/$(CUDA_DIR); \
+		done \
+	fi
+
+	# Fix the paths due to the packaging destination differing from the actual system destination.
+	find $(BEFORE)/$(CUDA_DIR) -type f \
+		-not -name '*.so' -not -name '*.a' \
+		-exec sed -i -e 's#$(BEFORE)#$(PREFIX)#g; s#usr/local#$(PREFIX)#g' {} \;
