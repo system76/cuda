@@ -1,0 +1,5 @@
+tensorflow-1.13-cuda-10.1 (1.13.1~0pop1) cosmic; urgency=medium
+
+  * New release, based on 1.13.1
+
+ -- Michael Murphy <michael@system76.com>  Thu, 15 Nov 2018 09:30:00 -0600
