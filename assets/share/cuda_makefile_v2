@@ -51,3 +51,8 @@ install:
 	find $(BEFORE)/$(CUDA_DIR) -type f \
 		-not -name '*.so' -not -name '*.a' \
 		-exec sed -i -e 's#$(BEFORE)#$(PREFIX)#g; s#usr/local#$(PREFIX)#g' {} \;
+
+	# Add missing symlinks
+	for file in $$(find $(BEFORE)/$(CUDA_DIR)/lib64/ -name '*.so'); do \
+		ln -s $$(basename $$file) $${file}.$(CUDA_VERSION); \
+	done

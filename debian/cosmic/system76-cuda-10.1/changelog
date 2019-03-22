@@ -1,3 +1,9 @@
+system76-cuda-10.1 (0pop1) cosmic; urgency=medium
+
+  * Add missing ${soname}.10.1 symlinks
+
+ -- Michael Aaron Murphy <michael@system76.com>  Fri, 15 Mar 2019 11:39:23 -0600
+
 system76-cuda-10.1 (0pop0) cosmic; urgency=medium
 
   * Initial release.
