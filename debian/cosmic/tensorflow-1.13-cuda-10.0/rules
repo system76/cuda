@@ -5,7 +5,7 @@
 
 BUILD_DIR = $(shell pwd)
 
-export CUDA_TOOLKIT_PATH=/usr/lib/cuda-10.1
+export CUDA_TOOLKIT_PATH=/usr/lib/cuda-10.0
 export HOME = $(shell pwd)/cache
 
 WHEEL_DIR = python-wheel
@@ -13,7 +13,7 @@ WHEEL = tensorflow-1.13.1-cp36-cp36m-linux_x86_64.whl
 C_API = libtensorflow.so
 CC_API = libtensorflow_cc.so
 
-PREFIX := usr/lib/tensorflow1.13-cuda10.1
+PREFIX := usr/lib/tensorflow1.13-cuda10.0
 LIB = $(PREFIX)/lib
 INCLUDE = $(PREFIX)/include
 PYTHON_TARGET = $(LIB)/python3.6/

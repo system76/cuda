@@ -1,4 +1,4 @@
-Source: tensorflow-1.13-cuda-10.1
+Source: tensorflow-1.13-cuda-10.0
 Maintainer: Michael Aaron Murphy <michael@system76.com>
 Standards-Version: 4.1.1
 Priority: optional
@@ -25,13 +25,13 @@ Build-Depends:
     python3-pip,
     python3-setuptools,
     python3-wheel,
-    system76-cudnn-10.1,
-    system76-nccl-10.1,
+    system76-cudnn-10.0,
+    system76-nccl-10.0,
     unzip,
     wget,
     zlib1g-dev,
 
-Package: tensorflow-1.13-cuda-10.1
+Package: tensorflow-1.13-cuda-10.0
 Description: An open source machine learning framework
 Architecture: amd64
 Section: devel
@@ -54,8 +54,8 @@ Depends:
     python3-pip,
     python3-setuptools,
     python3-wheel,
-    system76-cudnn-10.1,
-    system76-nccl-10.1,
+    system76-cudnn-10.0,
+    system76-nccl-10.0,
     unzip,
     wget,
     zlib1g-dev,
