@@ -48,7 +48,7 @@ if [ -n "${CUDA_TOOLKIT_PATH}" ]; then
 
     # choose the right version of CUDA compiler
     if [ -z "$GCC_HOST_COMPILER_PATH" ]; then
-        export GCC_HOST_COMPILER_PATH=${GCC_HOST_COMPILER_PATH:-"/usr/bin/gcc-8"}
+        export GCC_HOST_COMPILER_PATH=${GCC_HOST_COMPILER_PATH:-"/usr/bin/gcc-7"}
     fi
 
     export CLANG_CUDA_COMPILER_PATH=${CLANG_CUDA_COMPILER_PATH:-"/usr/bin/clang"}
