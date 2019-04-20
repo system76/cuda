@@ -9,16 +9,14 @@ export CUDA_TOOLKIT_PATH=/usr/lib/cuda-10.0
 export HOME = $(shell pwd)/cache
 
 WHEEL_DIR = python-wheel
-WHEEL = tensorflow-1.12.0-cp36-cp36m-linux_x86_64.whl
+WHEEL = tensorflow-1.13.1-cp36-cp36m-linux_x86_64.whl
 C_API = libtensorflow.so
 CC_API = libtensorflow_cc.so
 
-PREFIX := usr/lib/tensorflow1.12-cuda10.0
+PREFIX := usr/lib/tensorflow1.13-cuda10.0
 LIB = $(PREFIX)/lib
 INCLUDE = $(PREFIX)/include
 PYTHON_TARGET = $(LIB)/python3.6/
-
-BUILD_PREFIX := $(shell echo $(BUILD_DIR) | sed 's/\//\\\//g')
 
 override_dh_auto_configure:
 	bash debian/deps.sh
@@ -54,7 +52,7 @@ override_dh_auto_install:
 		pip3 install $(WHEEL_DIR)/$(WHEEL) -t ../../$(PYTHON_TARGET)
 
 	# Strip the build root from paths
-	find $(PREFIX) -type f -exec sed -i "s/$(BUILD_PREFIX)//g" {} \;
+	find $(PREFIX) -type f -exec sed -i "s#$(BUILD_DIR)##g" {} \;
 
 	# Copy extra assets into the package
 	cp -r debian/assets/* $(PREFIX)

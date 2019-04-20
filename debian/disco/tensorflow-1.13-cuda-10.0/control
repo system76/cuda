@@ -1,4 +1,4 @@
-Source: tensorflow-1.12-cuda-10.0
+Source: tensorflow-1.13-cuda-10.0
 Maintainer: Michael Aaron Murphy <michael@system76.com>
 Standards-Version: 4.1.1
 Priority: optional
@@ -11,7 +11,7 @@ Build-Depends:
     cmake,
     curl,
     debhelper (>= 9),
-    g++-7,
+    g++-8,
     git,
     libnvidia-compute-410,
     libtool,
@@ -31,7 +31,7 @@ Build-Depends:
     wget,
     zlib1g-dev,
 
-Package: tensorflow-1.12-cuda-10.0
+Package: tensorflow-1.13-cuda-10.0
 Description: An open source machine learning framework
 Architecture: amd64
 Section: devel
@@ -41,7 +41,7 @@ Depends:
     build-essential,
     cmake,
     curl,
-    g++-7,
+    g++-8,
     git,
     libtool,
     mlocate,

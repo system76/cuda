@@ -1,4 +1,4 @@
-Source: bazel
+Source: system76-nccl-10.0
 Maintainer: Michael Aaron Murphy <michael@system76.com>
 Standards-Version: 4.1.1
 Priority: optional
@@ -6,19 +6,16 @@ Section: devel
 Build-Depends:
     debhelper (>= 9),
     build-essential,
-    openjdk-13-jdk,
-    python,
-    zip,
+    g++-7,
+    system76-cuda-10.0,
     unzip,
 
-Package: bazel
-Description: Build and test tool similar to Make, Maven, and Gradle.
+Package: system76-nccl-10.0
+Description: Optimized primitives for collective multi-GPU communication.
 Architecture: amd64
 Section: devel
 Depends:
     build-essential,
-    openjdk-13-jdk,
-    python,
-    zip,
-    unzip,
+    g++-7,
+    system76-cuda-10.0,
     ${misc:Depends},
