@@ -16,7 +16,7 @@ CC_API = libtensorflow_cc.so
 PREFIX := usr/lib/tensorflow1.13-cuda10.0
 LIB = $(PREFIX)/lib
 INCLUDE = $(PREFIX)/include
-PYTHON_TARGET = $(LIB)/python3.6/
+PYTHON_TARGET = $(LIB)/python3.7/
 
 override_dh_auto_configure:
 	bash debian/deps.sh

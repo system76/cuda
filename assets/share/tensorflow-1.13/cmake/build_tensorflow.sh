@@ -64,18 +64,10 @@ fi
 
 bazel build --config=opt \
     --config=monolithic \
+    --define=framework_shared_object=true \
     $cuda_config_opts \
-    tensorflow:libtensorflow_cc.so
-
-bazel build --config=opt \
-    --config=monolithic \
-    $cuda_config_opts \
-    //tensorflow:libtensorflow.so
-
-# Python API
-bazel build --config=opt \
-    --config=monolithic \
-    $cuda_config_opts \
+    //tensorflow:libtensorflow.so \
+    //tensorflow:libtensorflow_cc.so \
     //tensorflow/tools/pip_package:build_pip_package
 
 bazel shutdown

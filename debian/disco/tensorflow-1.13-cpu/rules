@@ -15,7 +15,7 @@ CC_API = libtensorflow_cc.so
 PREFIX := usr/lib/tensorflow1.13-cpu
 LIB = $(PREFIX)/lib
 INCLUDE = $(PREFIX)/include
-PYTHON_TARGET = $(LIB)/python3.6/
+PYTHON_TARGET = $(LIB)/python3.7/
 
 BUILD_PREFIX := $(shell echo $(BUILD_DIR) | sed 's/\//\\\//g')
 
