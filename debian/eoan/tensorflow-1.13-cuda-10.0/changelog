@@ -1,0 +1,12 @@
+tensorflow-1.13-cuda-10.0 (1.13.1~0pop2) disco; urgency=medium
+
+  * Fix a compiler bug by adding --define=framework_shared_object=true to
+    bazel build flags
+
+ -- Michael Aaron Murphy <mmstick@pop-os.localdomain>  Wed, 08 May 2019 14:02:30 -0600
+
+tensorflow-1.13-cuda-10.0 (1.13.1~0pop1) disco; urgency=medium
+
+  * New release
+
+ -- Michael Aaron Murphy <michael@system76.com>  Fri, 08 Mar 2019 13:21:11 -0700
