@@ -29,6 +29,8 @@ override_dh_auto_build:
 	mkdir build
 	cd build && cmake -DTENSORFLOW_STATIC=OFF -DTENSORFLOW_SHARED=ON \
 		-DCMAKE_INSTALL_PREFIX=../$(PREFIX) .. \
+		&& ls && ls .. \
+		&& sed -i -E 's#\.tf_configure\.bazelrc#tools/bazel.rc#' ../.bazelrc \
 		&& make
 
 	cd build/tensorflow && ./bazel-bin/tensorflow/tools/pip_package/build_pip_package \
