@@ -1,3 +1,0 @@
-#!/bin/sh
-update-alternatives --install /usr/lib/tensorflow tensorflow /usr/lib/tensorflow1.13-cpu/ 100
-ldconfig
