@@ -83,28 +83,28 @@ build_on = "changelog"
     url = "https://github.com/bazelbuild/bazel/releases/download/0.21.0/bazel-0.21.0-dist.zip"
     checksum = "6ccb831e683179e0cfb351cb11ea297b4db48f9eab987601c038aa0f83037db4"
 
-[[source]]
-name = "tensorflow-1.13-cuda-10.0"
-build_on = "changelog"
-retain = 1
-assets = [
-    { src = "tensorflow-1.13/*", dst = "." },
-    { src = "tensorflow/*", dst = "debian" }
-]
-depends = [
-    "bazel",
-    "system76-cuda",
-    "system76-cuda-10.0",
-    "system76-cudnn-10.0",
-    "system76-nccl-10.0",
-]
+# [[source]]
+# name = "tensorflow-1.13-cuda-10.0"
+# build_on = "changelog"
+# retain = 1
+# assets = [
+#     { src = "tensorflow-1.13/*", dst = "." },
+#     { src = "tensorflow/*", dst = "debian" }
+# ]
+# depends = [
+#     "bazel",
+#     "system76-cuda",
+#     "system76-cuda-10.0",
+#     "system76-cudnn-10.0",
+#     "system76-nccl-10.0",
+# ]
 
-[[source]]
-name = "tensorflow-1.13-cpu"
-build_on = "changelog"
-retain = 1
-assets = [
-    { src = "tensorflow-1.13/*", dst = "." },
-    { src = "tensorflow/*", dst = "debian" }
-]
-depends = [ "bazel" ]
+# [[source]]
+# name = "tensorflow-1.13-cpu"
+# build_on = "changelog"
+# retain = 1
+# assets = [
+#     { src = "tensorflow-1.13/*", dst = "." },
+#     { src = "tensorflow/*", dst = "debian" }
+# ]
+# depends = [ "bazel" ]
