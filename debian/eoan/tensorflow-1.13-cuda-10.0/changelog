@@ -1,3 +1,9 @@
+tensorflow-1.13-cuda-10.0 (1.13.1~0pop3) UNRELEASED; urgency=medium
+
+  * Update libnvidia-compute build dependency 
+
+ -- Michael Aaron Murphy <michael@system76.com>  Tue, 10 Sep 2019 09:37:28 -0600
+
 tensorflow-1.13-cuda-10.0 (1.13.1~0pop2) disco; urgency=medium
 
   * Fix a compiler bug by adding --define=framework_shared_object=true to
