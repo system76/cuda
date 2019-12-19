@@ -22,16 +22,6 @@ assets = [
 ]
 
 [[source]]
-name = "system76-cuda-9.1"
-build_on = "changelog"
-keep_source = false
-retain = 1
-assets = [
-    { src = "cuda_makefile", dst = "Makefile" },
-    { src = "nvidia_cuda/*", dst = "debian"}
-]
-
-[[source]]
 name = "system76-cuda-9.2"
 build_on = "changelog"
 keep_source = false
@@ -59,14 +49,6 @@ assets = [
 keep_source = false
 retain = 1
 
-[[source]]
-name = "system76-cudnn-9.1"
-build_on = "changelog"
-assets = [
-    { src = "nvidia_cuda/*", dst = "debian"}
-]
-keep_source = false
-retain = 1
 
 [[source]]
 name = "system76-cudnn-9.2"

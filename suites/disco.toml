@@ -41,8 +41,8 @@ depends = [
 ]
 
     [source.location]
-    url = "https://github.com/NVIDIA/nccl/archive/v2.3.7-1.tar.gz"
-    checksum = "e6eff80d9d2db13c61f8452e1400ca2f098d2dfe42857cb23413ce081c5b9e9b"
+    url = "https://github.com/NVIDIA/nccl/archive/v2.5.6-2.tar.gz"
+    checksum = "8a30e0b4813a825592872fcbeeede22a659e2c399074dcce02960591dc81387d"
 
 [[source]]
 name = "system76-cuda-10.1"
@@ -71,8 +71,8 @@ depends = [
 ]
 
     [source.location]
-    url = "https://github.com/NVIDIA/nccl/archive/v2.4.2-1.tar.gz"
-    checksum = "e3dd04b22eb541394bd818e5f78ac23a09cc549690d5d55d6fccc1a36155385a"
+    url = "https://github.com/NVIDIA/nccl/archive/v2.5.6-2.tar.gz"
+    checksum = "8a30e0b4813a825592872fcbeeede22a659e2c399074dcce02960591dc81387d"
 
 # Build system required by tensorflow
 [[source]]

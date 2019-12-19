@@ -9,5 +9,4 @@ PREFIX=usr/lib/cuda-$(CUDA_VERSION)
 override_dh_auto_build:
 
 override_dh_auto_install:
-	ls -l
 	tar xvf cudnn.tgz

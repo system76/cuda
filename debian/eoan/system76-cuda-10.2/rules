@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+export CUDA_VERSION=10.2
+export DESTDIR=$(PWD)/debian/tmp
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	make \
+		INSTALLER=cuda_10.2.89_440.33.01_linux.run \
+		INSTALLER_SUM=3d816c583759efa8567a92c1a2af90db
+
+# CUDA ships its own shared libraries
+override_dh_shlibdeps:
+
+override_dh_strip:

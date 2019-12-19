@@ -39,17 +39,25 @@ function fetch_patches {
 function get_toolkit {
     CUDA_VERSION=$1
     INSTALLER=$2
-    INSTALLER_SUM=$3
-    PATCHES=$4
 
-    EXTRACT_DIR=$PACKAGES/system76-cuda-$CUDA_VERSION
-    SCRIPT=$EXTRACT_DIR/installer-$CUDA_VERSION
-    REMOTE_CUDA_DIR=https://developer.nvidia.com/compute/cuda/$CUDA_VERSION/Prod
-    INSTALLER_URL=$REMOTE_CUDA_DIR/local_installers/$INSTALLER
-    CUDA_DIR=cuda-$CUDA_VERSION
+    EXTRACT_DIR=$PACKAGES/system76-cuda-${CUDA_VERSION}
+    SCRIPT=$EXTRACT_DIR/installer-${CUDA_VERSION}
+    CUDA_DIR=cuda-${CUDA_VERSION}
+
+    if test "$3" = "v2"; then
+        INSTALLER_SUM=$4
+        PATCHES=$5
+        REMOTE_CUDA_DIR=http://developer.download.nvidia.com/compute/cuda/${CUDA_VERSION}/Prod
+        INSTALLER_URL=${REMOTE_CUDA_DIR}/local_installers/${INSTALLER}
+    else
+        INSTALLER_SUM=$3
+        PATCHES=$4
+        REMOTE_CUDA_DIR=https://developer.nvidia.com/compute/cuda/${CUDA_VERSION}/Prod
+        INSTALLER_URL=$REMOTE_CUDA_DIR/local_installers/$INSTALLER
+    fi
 
     mkdir $EXTRACT_DIR -p
-    fetch_patches $REMOTE_CUDA_DIR $CUDA_VERSION $PATCHES
+    fetch_patches $REMOTE_CUDA_DIR ${CUDA_VERSION} $PATCHES
     fetch $SCRIPT $INSTALLER_URL $INSTALLER_SUM
     chmod +x $SCRIPT
 }
@@ -59,11 +67,11 @@ get_cudnn () {
         "http://developer.download.nvidia.com/compute/redist/cudnn/v$2/cudnn-$1-linux-x64-v$3.tgz" $4
 }
 
-get_cudnn "9.0" "7.1.4" "7.1" "60b581d0f05324c33323024a264aa3fb185c533e2f67dae7fda847b926bb7e57"
-get_cudnn "9.1" "7.1.2" "7.1" "c61000ed700bc5a009bc2e135bbdf736c9743212b2174a2fc9018a66cc0979ec"
-get_cudnn "9.2" "7.4.1" "7.4.1.5" "a850d62f32c6a18271932d9a96072ac757c2c516bd1200ae8b79e4bdd3800b5b"
-get_cudnn "10.0" "7.4.1" "7.4.1.5" "b320606f1840eec0cdd4453cb333554a3fe496dd4785f10d8e87fe1a4f52bd5c"
-get_cudnn "10.1" "7.5.0" "7.5.0.56" "c31697d6b71afe62838ad2e57da3c3c9419c4e9f5635d14b683ebe63f904fbc8"
+get_cudnn "9.0" "7.6.5" "7.6.5.32" "60b581d0f05324c33323024a264aa3fb185c533e2f67dae7fda847b926bb7e57"
+get_cudnn "9.2" "7.6.5" "7.6.5.32" "a850d62f32c6a18271932d9a96072ac757c2c516bd1200ae8b79e4bdd3800b5b"
+get_cudnn "10.0" "7.6.5" "7.6.5.32" "b320606f1840eec0cdd4453cb333554a3fe496dd4785f10d8e87fe1a4f52bd5c"
+get_cudnn "10.1" "7.6.5" "7.6.5.32" "c31697d6b71afe62838ad2e57da3c3c9419c4e9f5635d14b683ebe63f904fbc8"
+get_cudnn "10.2" "7.6.5" "7.6.5.32" "600267f2caaed2fd58eb214ba669d8ea35f396a7d19b94822e6b36f9f7088c20"
 
 get_toolkit 9.0 \
     cuda_9.0.176_384.81_linux-run \
@@ -91,3 +99,8 @@ get_toolkit 10.0 \
 get_toolkit 10.1 \
     cuda_10.1.105_418.39_linux.run \
     "33ac60685a3e29538db5094259ea85c15906cbd0f74368733f4111eab6187c8f"
+
+get_toolkit 10.2 \
+    cuda_10.2.89_440.33.01_linux.run \
+    "v2" \
+    "560d07fdcf4a46717f2242948cd4f92c5f9b6fc7eae10dd996614da913d5ca11" \

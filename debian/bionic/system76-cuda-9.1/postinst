@@ -1,3 +1,0 @@
-#!/bin/sh
-update-alternatives --install /usr/lib/cuda cuda /usr/lib/cuda-9.1 100
-ldconfig

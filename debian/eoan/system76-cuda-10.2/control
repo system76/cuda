@@ -1,4 +1,4 @@
-Source: system76-cuda-9.1
+Source: system76-cuda-10.2
 Maintainer: Michael Aaron Murphy <michael@system76.com>
 Standards-Version: 4.1.1
 Priority: optional
@@ -6,11 +6,12 @@ Section: devel
 Build-Depends:
     ca-certificates,
     debhelper (>= 9),
+    g++,
     ssl-cert,
     wget,
 
-Package: system76-cuda-9.1
-Description: NVIDIA CUDA 9.1 Compiler / Libraries / Toolkit
+Package: system76-cuda-10.2
+Description: NVIDIA CUDA 10 Compiler / Libraries / Toolkit
 Architecture: amd64
 Section: devel
 Depends:
