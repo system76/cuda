@@ -6,7 +6,7 @@ Section: devel
 Build-Depends:
     ca-certificates,
     debhelper (>= 9),
-    g++,
+    g++-8,
     ssl-cert,
     wget,
 

@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-CUDA_VERSION=10.1
+CUDA_VERSION=10.2
 PREFIX=usr/lib/cuda-$(CUDA_VERSION)
 
 %:

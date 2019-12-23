@@ -50,7 +50,7 @@ build_on = "changelog"
 keep_source = false
 retain = 1
 assets = [
-    { src = "cuda_makefile", dst = "Makefile" },
+    { src = "cuda_makefile_v3", dst = "Makefile" },
     { src = "nvidia_cuda/*", dst = "debian"}
 ]
 
