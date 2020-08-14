@@ -44,6 +44,37 @@ depends = [
     url = "https://github.com/NVIDIA/nccl/archive/v2.5.6-2.tar.gz"
     checksum = "8a30e0b4813a825592872fcbeeede22a659e2c399074dcce02960591dc81387d"
 
+
+[[source]]
+name = "system76-cuda-10.1"
+build_on = "changelog"
+keep_source = false
+retain = 1
+assets = [
+    { src = "cuda_makefile_v2", dst = "Makefile" },
+]
+
+[[source]]
+name = "system76-cudnn-10.1"
+build_on = "changelog"
+assets = [
+    { src = "nvidia_cuda/*", dst = "debian"}
+]
+retain = 1
+keep_source = false
+
+[[source]]
+name = "system76-nccl-10.1"
+build_on = "changelog"
+depends = [
+    "system76-cuda",
+    "system76-cuda-10.1",
+]
+
+    [source.location]
+    url = "https://github.com/NVIDIA/nccl/archive/v2.5.6-2.tar.gz"
+    checksum = "8a30e0b4813a825592872fcbeeede22a659e2c399074dcce02960591dc81387d"
+
 [[source]]
 name = "system76-cuda-10.2"
 build_on = "changelog"
