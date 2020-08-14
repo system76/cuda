@@ -70,7 +70,7 @@ get_cudnn () {
 get_cudnn "9.0" "7.6.5" "7.6.5.32" "60b581d0f05324c33323024a264aa3fb185c533e2f67dae7fda847b926bb7e57"
 get_cudnn "9.2" "7.6.5" "7.6.5.32" "a850d62f32c6a18271932d9a96072ac757c2c516bd1200ae8b79e4bdd3800b5b"
 get_cudnn "10.0" "7.6.5" "7.6.5.32" "b320606f1840eec0cdd4453cb333554a3fe496dd4785f10d8e87fe1a4f52bd5c"
-get_cudnn "10.1" "7.6.5" "7.6.5.32" "c31697d6b71afe62838ad2e57da3c3c9419c4e9f5635d14b683ebe63f904fbc8"
+get_cudnn "10.1" "7.6.5" "7.6.5.32" "7eaec8039a2c30ab0bc758d303588767693def6bf49b22485a2c00bf2e136cb3"
 get_cudnn "10.2" "7.6.5" "7.6.5.32" "600267f2caaed2fd58eb214ba669d8ea35f396a7d19b94822e6b36f9f7088c20"
 
 get_toolkit 9.0 \
@@ -94,7 +94,7 @@ get_toolkit 9.2 \
 
 get_toolkit 10.0 \
     cuda_10.0.130_410.48_linux \
-    "92351f0e4346694d0fcb4ea1539856c9eb82060c25654463bfd8574ec35ee39a"
+#     "92351f0e4346694d0fcb4ea1539856c9eb82060c25654463bfd8574ec35ee39a"
 
 get_toolkit 10.1 \
     cuda_10.1.105_418.39_linux.run \
