@@ -1,0 +1,1 @@
+exec /usr/lib/cuda/wrapped/nvcc -ccbin g++-8 "$@"

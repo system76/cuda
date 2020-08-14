@@ -16,4 +16,5 @@ Architecture: amd64
 Section: devel
 Depends:
     system76-cuda,
+    g++-8,
     ${misc:Depends},
