@@ -11,7 +11,7 @@ export CXX=/usr/bin/g++-7
 override_dh_auto_build:
 	make \
 		INSTALLER=cuda_10.1.105_418.39_linux.run \
-		INSTALLER_SUM=17d3045dfca74ea301447c56a6a21c97
+		INSTALLER_SUM=4be516e493ef9588f455df0722e2e686
 
 override_dh_auto_install:
 	dh_auto_install || (cat /tmp/installer.log; cat /tmp/cuda-installer.log;  exit 1)
