@@ -56,8 +56,3 @@ install:
 	for file in $$(find $(BEFORE)/$(CUDA_DIR)/lib64/ -name '*.so'); do \
 		test $${file}.$(CUDA_VERSION) || ln -s $$(basename $$file) $${file}.$(CUDA_VERSION); \
 	done
-
-	## Set the GCC version we used to build with
-	mkdir $(BEFORE)/$(CUDA_DIR)/bin/wrapped
-	mv $(BEFORE)/$(CUDA_DIR)/bin/nvcc $(BEFORE)/$(CUDA_DIR)/bin/wrapped/nvcc
-	install debian/nvcc $(BEFORE)/$(CUDA_DIR)/bin/

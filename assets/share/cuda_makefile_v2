@@ -20,7 +20,7 @@ clean:
 install:
 	mkdir -p $(BEFORE)/$(CUDA_DIR) build
 
-	./$(SCRIPT) --extract=$(PWD)/build
+	./$(SCRIPT) --override --extract=$(PWD)/build
 
 	mv build/cuda-toolkit/* $(BEFORE)/$(CUDA_DIR)/
 
