@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+CUDA_VERSION=10.0
+PREFIX=usr/lib/cuda-$(CUDA_VERSION)
+
+%:
+	dh $@
+
+override_dh_auto_build:
+
+override_dh_auto_install:
+	tar xvf cudnn.tgz
