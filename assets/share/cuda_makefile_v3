@@ -20,32 +20,17 @@ clean:
 install:
 	mkdir -p $(BEFORE)/$(CUDA_DIR) build
 
-	./$(SCRIPT) --extract=$(PWD)/build --override
+	./installer-$(CUDA_VERSION) --override --extract=$(PWD)/build
 
-	mv build/cuda-toolkit/* $(BEFORE)/$(CUDA_DIR)/
+	mv build/cuda_samples $(BEFORE)/$(CUDA_DIR)/samples
+	cd build; mv bin integration nsight_compute nsight_systems EULA.txt $(BEFORE)/$(CUDA_DIR)/
 
-	if test -e build/cuda-samples; then \
-	    mv build/cuda-samples $(BEFORE)/$(CUDA_DIR)/samples; \
-	fi
+	for module in build/cuda_* build/lib*; do \
+		cp -a $${module}/* $(BEFORE)/$(CUDA_DIR)/; \
+		rm -rf $${module}; \
+	done
 
-	if test -e build/cublas; then \
-		cp -a build/cublas/include/* $(BEFORE)/$(CUDA_DIR)/include/; \
-		cp -a build/cublas/lib64/* $(BEFORE)/$(CUDA_DIR)/lib64/; \
-		rm -R build/cublas/include build/cublas/lib64; \
-		cp -a build/cublas/* $(BEFORE)/$(CUDA_DIR)/; \
-	fi
-
-	if test -e build/EULA.txt; then \
-		mv build/EULA.txt $(BEFORE)/$(CUDA_DIR)/; \
-	fi
-
-	# Install all of the patches for this version.
-	if ls | grep patch; then \
-		for patch in patch-$(CUDA_VERSION)-*.run; do \
-			sh $$patch --accept-eula --silent \
-				--installdir=$(BEFORE)/$(CUDA_DIR); \
-		done \
-	fi
+	ls $(BEFORE)/$(CUDA_DIR)
 
 	# Fix the paths due to the packaging destination differing from the actual system destination.
 	find $(BEFORE)/$(CUDA_DIR) -type f \
@@ -54,5 +39,5 @@ install:
 
 	# Add missing symlinks
 	for file in $$(find $(BEFORE)/$(CUDA_DIR)/lib64/ -name '*.so'); do \
-		test $${file}.$(CUDA_VERSION) || ln -s $$(basename $$file) $${file}.$(CUDA_VERSION); \
+		test -f $${file}.$(CUDA_VERSION) || ln -s $$(basename $$file) $${file}.$(CUDA_VERSION); \
 	done

@@ -54,5 +54,5 @@ install:
 
 	# Add missing symlinks
 	for file in $$(find $(BEFORE)/$(CUDA_DIR)/lib64/ -name '*.so'); do \
-		ln -s $$(basename $$file) $${file}.$(CUDA_VERSION); \
+		test -f $${file}.$(CUDA_VERSION) || ln -s $$(basename $$file) $${file}.$(CUDA_VERSION); \
 	done

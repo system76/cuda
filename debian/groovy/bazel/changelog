@@ -1,10 +1,10 @@
-bazel (0.21.0~0pop2) disco; urgency=medium
+bazel (0.21.0~0pop2) groovy; urgency=medium
 
-  * Fix for disco
+  * Fix for groovy
 
  -- Michael Aaron Murphy <michael@system76.com>  Fri, 19 Apr 2019 21:27:58 -0600
 
-bazel (0.21.0~0pop1) disco; urgency=medium
+bazel (0.21.0~0pop1) groovy; urgency=medium
 
   * Update bazel to 0.21.0, to build Tensorflow 1.13.1
 

@@ -14,38 +14,6 @@ assets = [
 ]
 
 [[source]]
-name = "system76-cuda-10.0"
-build_on = "changelog"
-keep_source = false
-retain = 1
-assets = [
-    { src = "cuda_makefile", dst = "Makefile" },
-    { src = "nvidia_cuda/*", dst = "debian"}
-]
-
-[[source]]
-name = "system76-cudnn-10.0"
-build_on = "changelog"
-assets = [
-    { src = "nvidia_cuda/*", dst = "debian"}
-]
-retain = 1
-keep_source = false
-
-[[source]]
-name = "system76-nccl-10.0"
-build_on = "changelog"
-depends = [
-    "system76-cuda",
-    "system76-cuda-10.0",
-]
-
-    [source.location]
-    url = "https://github.com/NVIDIA/nccl/archive/v2.7.8-1.tar.gz"
-    checksum = "fa2bec307270f30fcf6280a85f24ea8801e0ce3b3027937c7325260a890b07e0"
-
-
-[[source]]
 name = "system76-cuda-10.1"
 build_on = "changelog"
 keep_source = false
@@ -81,8 +49,7 @@ build_on = "changelog"
 keep_source = false
 retain = 1
 assets = [
-    { src = "cuda_makefile_v3", dst = "Makefile" },
-    { src = "nvidia_cuda/*", dst = "debian"}
+    { src = "cuda_makefile_v2", dst = "Makefile" },
 ]
 
 [[source]]
@@ -105,3 +72,54 @@ depends = [
     [source.location]
     url = "https://github.com/NVIDIA/nccl/archive/v2.7.8-1.tar.gz"
     checksum = "fa2bec307270f30fcf6280a85f24ea8801e0ce3b3027937c7325260a890b07e0"
+
+[[source]]
+name = "system76-cuda-11.1"
+build_on = "changelog"
+keep_source = false
+retain = 1
+assets = [
+    { src = "cuda_makefile_v3", dst = "Makefile" },
+]
+
+[[source]]
+name = "system76-cudnn-11.1"
+build_on = "changelog"
+assets = [
+    { src = "nvidia_cuda/*", dst = "debian"}
+]
+retain = 1
+keep_source = false
+
+[[source]]
+name = "system76-nccl-11.1"
+build_on = "changelog"
+depends = [
+    "system76-cuda",
+    "system76-cuda-11.1",
+]
+
+    [source.location]
+    url = "https://github.com/NVIDIA/nccl/archive/v2.8.3-1.tar.gz"
+    checksum = "3ae89ddb2956fff081e406a94ff54ae5e52359f5d645ce977c7eba09b3b782e6"
+
+[[source]]
+name = "system76-cuda-11.2"
+build_on = "changelog"
+keep_source = false
+retain = 1
+assets = [
+    { src = "cuda_makefile_v3", dst = "Makefile" },
+]
+
+[[source]]
+name = "system76-nccl-11.2"
+build_on = "changelog"
+depends = [
+    "system76-cuda",
+    "system76-cuda-11.2",
+]
+
+    [source.location]
+    url = "https://github.com/NVIDIA/nccl/archive/v2.8.3-1.tar.gz"
+    checksum = "3ae89ddb2956fff081e406a94ff54ae5e52359f5d645ce977c7eba09b3b782e6"
