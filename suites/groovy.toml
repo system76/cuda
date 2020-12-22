@@ -4,9 +4,6 @@ origin = "system76"
 label = "System76"
 email = "info@system76.com"
 
-extra_repos = [ "deb http://ppa.launchpad.net/system76/pop/ubuntu groovy main" ]
-
-
 [[source]]
 name = "system76-cuda"
 build_on = "changelog"
