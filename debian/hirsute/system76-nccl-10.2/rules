@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+CUDA_SDK=usr/lib/cuda-10.2/
+export CC=/usr/bin/gcc-8
+export CXX=/usr/bin/g++-8
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	make -j src.build CUDA_HOME=/$(CUDA_SDK)
+
+override_dh_auto_install:
+	mkdir -p $(CUDA_SDK)/lib64 $(CUDA_SDK)/include
+	mv build/lib/* $(CUDA_SDK)/lib64
+	mv build/include/* $(CUDA_SDK)/include/
+
+override_dh_strip:
+
+override_dh_shlibdeps:
