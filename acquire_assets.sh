@@ -74,6 +74,8 @@ get_cudnn "9.2" "7.6.5" "7.6.5.32" "a2a2c7a8ba7b16d323b651766ee37dcfdbc2b50d920f
 get_cudnn "10.1" "8.0.4" "8.0.4.30" "eb4b888e61715168f57a0a0a21c281ada6856b728e5112618ed15f8637487715"
 get_cudnn "10.2" "8.0.4" "8.0.4.30" "c12c69eb16698eacac40aa46b9ce399d4cd86efb6ff0c105142f8a28fcfb980e"
 get_cudnn "11.1" "8.0.4" "8.0.4.30" "8f4c662343afce5998ce963500fe3bb167e9a508c1a1a949d821a4b80fa9beab"
+get_cudnn "11.2" "8.1.1" "8.1.1.33" "98a8784e92862f20018d20c281b30d4a0cd951f93694f6433ccf4ae9c502ba6a"
+
 
 get_toolkit 9.0 \
     cuda_9.0.176_384.81_linux-run \
