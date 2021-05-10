@@ -91,6 +91,15 @@ retain = 1
 keep_source = false
 
 [[source]]
+name = "system76-cudnn-11.2"
+build_on = "changelog"
+assets = [
+    { src = "nvidia_cuda/*", dst = "debian"}
+]
+retain = 1
+keep_source = false
+
+[[source]]
 name = "system76-nccl-11.1"
 build_on = "changelog"
 depends = [
