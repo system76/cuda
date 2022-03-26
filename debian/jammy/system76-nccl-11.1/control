@@ -1,0 +1,21 @@
+Source: system76-nccl-11.1
+Maintainer: Michael Aaron Murphy <michael@system76.com>
+Standards-Version: 4.1.1
+Priority: optional
+Section: devel
+Build-Depends:
+    debhelper (>= 9),
+    build-essential,
+    g++-9,
+    system76-cuda-11.1,
+    unzip,
+
+Package: system76-nccl-11.1
+Description: Optimized primitives for collective multi-GPU communication.
+Architecture: amd64
+Section: devel
+Depends:
+    build-essential,
+    g++-9,
+    system76-cuda-11.1,
+    ${misc:Depends},

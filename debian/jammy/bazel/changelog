@@ -1,0 +1,23 @@
+bazel (0.21.0~0pop2) jammy; urgency=medium
+
+  * Fix for groovy
+
+ -- Michael Aaron Murphy <michael@system76.com>  Fri, 19 Apr 2019 21:27:58 -0600
+
+bazel (0.21.0~0pop1) hirsute; urgency=medium
+
+  * Update bazel to 0.21.0, to build Tensorflow 1.13.1
+
+ -- Michael Aaron Murphy <michael@system76.com>  Fri, 08 Mar 2019 14:39:55 -0700
+
+bazel (0.16.1~0pop1) cosmic; urgency=medium
+
+  * Update bazel to 0.16.1
+
+ -- Michael Murphy <michael@system76.com>  Mon, 6 Jul 2018 10:00:00 -0600
+
+bazel (0.15.0~0pop1) bionic; urgency=medium
+
+  * Initial release.
+
+ -- Michael Murphy <michael@system76.com>  Mon, 6 Jul 2018 10:00:00 -0600
