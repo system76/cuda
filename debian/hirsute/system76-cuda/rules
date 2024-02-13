@@ -1,8 +1,0 @@
-#!/usr/bin/make -f
-
-%:
-	dh $@
-
-override_dh_auto_install:
-	install -Dm0644 debian/assets/system76-cuda.sh debian/tmp/etc/profile.d/system76-cuda.sh
-	install -Dm0644 debian/assets/system76-cuda.conf debian/tmp/etc/ld.so.conf.d/system76-cuda.conf
